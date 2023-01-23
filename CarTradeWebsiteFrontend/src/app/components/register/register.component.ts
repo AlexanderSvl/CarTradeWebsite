@@ -12,7 +12,7 @@ import { Validation } from '../../constants/validations'
 })
 export class RegisterComponent implements OnInit {
   ngOnInit(): void {
-    this.checkValidation();
+    
   }
 
   registerModel = new UserRegisterModel('', '', '', '', '', new Date);

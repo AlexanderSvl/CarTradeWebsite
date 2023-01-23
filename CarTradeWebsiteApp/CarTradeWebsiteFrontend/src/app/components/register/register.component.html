@@ -1,0 +1,41 @@
+<form action="action_page.php" (ngSubmit)="onSubmit()" (click)="checkValidation()">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="firstName"><b>First Name</b></label>
+    <input type="text" placeholder="Enter your first name" name="firstName" id="firstName" required
+      [(ngModel)]="registerModel.firstName">
+
+    <label for="lastName"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter your last name" name="lastName" id="lastName" required
+      [(ngModel)]="registerModel.lastName">
+
+    <div *ngIf="!isInputValid">
+    </div>
+
+    <label for="userName"><b>Username</b></label>
+    <input type="text" placeholder="Enter your username" name="userName" id="userName" required
+      [(ngModel)]="registerModel.userName"> 
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required
+      [(ngModel)]="registerModel.email">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" name="password" id="password" autocomplete="on" required
+      [(ngModel)]="registerModel.password">
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="text" placeholder="Repeat Password" name="password-repeat" id="password-repeat" autocomplete="on" required
+      [(ngModel)]="repeatedPassword">
+    <hr>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a routerLinkActive="border border-info rounded" routerLink="/login">Sign in</a>.</p>
+  </div>
+</form>

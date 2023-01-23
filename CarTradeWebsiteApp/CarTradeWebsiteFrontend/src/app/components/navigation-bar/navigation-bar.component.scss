@@ -1,0 +1,38 @@
+nav {
+    background-color: #93d4dd !important;
+    height: 5rem;
+
+    .navbar-brand {
+        margin-left: 3rem;
+        margin-right: 5rem;
+        color: white !important;
+    }
+
+    .nav-item {
+        a {
+            margin-left: 1rem;
+            width: 8rem;
+            text-align: center;
+        }
+    }
+}
+
+.nav-link {
+    padding: 0.7rem;
+    background-color: #71c6d2;
+    color: white !important;
+    border-color: seashell !important;
+    border: 0.1rem solid whitesmoke !important;
+    border-radius: 0.6rem !important;
+}
+
+#left{
+    margin-left: 30rem;
+    float: left;
+
+    a {
+        margin-left: 1rem;
+        width: 8rem;
+        text-align: center;
+    }
+}

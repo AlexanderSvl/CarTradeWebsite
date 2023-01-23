@@ -1,0 +1,23 @@
+* {font-family:'Montserrat'}
+
+.searchBox {
+    width: 100%;
+    height: 10rem;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #searchLabel, #searchByLabel {
+        font-family:'Montserrat'; 
+        font-size: 22px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #searchBox, #seacrhDropdownBox {
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+        border: 0.1rem solid black;
+    }
+}

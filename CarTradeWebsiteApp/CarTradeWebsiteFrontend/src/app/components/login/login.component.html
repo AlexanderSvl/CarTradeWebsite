@@ -1,0 +1,17 @@
+<form action="action_page.php" (ngSubmit)="onSubmit()" (click)="checkValidation()">
+  <div class="container">
+    <h1>Login</h1>
+    <p>Please log into your account here.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="email" id="email" required 
+      [(ngModel)]="loginModel.email">
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter password" name="password" autocomplete="on" id="password" required
+      [(ngModel)]="loginModel.password">
+
+    <button type="submit">Login</button>
+  </div>
+</form>

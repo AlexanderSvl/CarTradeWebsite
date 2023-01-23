@@ -1,0 +1,21 @@
+<section class="headBox">
+    <h2>Today's hot offers!</h2>
+</section>
+
+<section *ngFor="let car of cars">
+    <div class="post">
+        <div class="image">
+            <img [src]="car.coverImageURL">
+        </div>
+        <div class="info">
+            <h1>{{car.title}}</h1>
+            <h2>{{car.carMake}} {{car.carModel}}</h2>
+        </div>
+        <div class="description">
+            <p><b>Description:</b>  {{car.description}}</p>
+        </div>
+        <div class="price">
+            <p><b>Price:</b>  ${{car.price}}</p>
+        </div>
+    </div>
+</section>

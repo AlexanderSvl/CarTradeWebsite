@@ -6,6 +6,7 @@ import { CarResponseModel } from 'src/app/models/carResponseModel';
 import { OptionModel } from 'src/app/models/optionModel';
 import { ImageModel } from 'src/app/models/imageModel';
 import { json } from 'stream/consumers';
+import { routePaths } from '../../constants/routes'
 
 @Component({
   selector: 'app-home',
@@ -24,5 +25,4 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
 }

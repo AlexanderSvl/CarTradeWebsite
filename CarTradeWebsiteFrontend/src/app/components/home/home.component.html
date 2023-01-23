@@ -2,7 +2,7 @@
     <h2>Today's hot offers!</h2>
 </section>
 
-<section *ngFor="let car of cars">
+<section *ngFor="let car of cars" routerLinkActive="border border-info rounded" routerLink="/login">
     <div class="post">
         <div class="image">
             <img [src]="car.coverImageURL">

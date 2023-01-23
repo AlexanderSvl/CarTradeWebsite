@@ -10,7 +10,11 @@ import { Validation } from '../../constants/validations'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
+  ngOnInit(): void {
+    this.checkValidation();
+  }
+
   registerModel = new UserRegisterModel('', '', '', '', '', new Date);
   repeatedPassword = '';
   isInputValid = false;

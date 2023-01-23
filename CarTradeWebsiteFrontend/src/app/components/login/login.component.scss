@@ -32,6 +32,17 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 0.9;
 }
 
+.loginbtn {
+  background-color: #71c6d2;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
 .loginbtn:hover {
   opacity:1;
 }

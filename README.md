@@ -6,9 +6,9 @@ CarTrade is a car trading website - here you can list you car for sale, search f
 
 Use the following commands to run the project on your machine:
 
-Backend: Open the .sln file and run the project from visual studio. <br />
-Frontend: Run ```npm install``` in '''/src''' folder to install the required npm packages and then ```ng serve``` to run the project.
+Backend: Open the ```.sln``` file and run the project from Visual Studio. <br />
+Frontend: Run ```npm install``` in ```/src``` folder to install the required npm packages and then ```ng serve``` to run the project.
 
 ## Used technologies
 
-For the backend I've used C# .NET and Entity Framework, and for the frontend - Angular v.16.
+For the backend I've used ```C# .NET``` and ```Entity Framework```, and for the frontend - ```Angular v.16```.

@@ -3,7 +3,7 @@ import { ImageModel } from './imageModel';
 
 export class CarResponseModel {
     constructor(
-    public ID: string,
+    public id: string,
     public title: string,
     public images: ImageModel[],
     public coverImageURL: string,

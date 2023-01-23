@@ -15,14 +15,18 @@ import { routePaths } from '../../constants/routes'
 })
 export class HomeComponent implements OnInit {
   cars: CarResponseModel[] = [];
-
+  
   constructor(private http: HttpClient, private router: Router, private postService: CarPostService){}
 
-  ngOnInit(): void {  
+  ngOnInit() {  
     this.postService.getPosts().subscribe((res: any) => {
       for (let i = 0; i < res.length; i++) {
         this.cars.push(res[i]);
       }
     });
+  }
+
+  redirect(car: CarResponseModel){
+    console.log(car.id);
   }
 }

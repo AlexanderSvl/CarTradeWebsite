@@ -11,6 +11,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     NavigationBarComponent,
     SearchComponent,
     LoginComponent,
-    RegisterComponent
-  ],
+    RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -21,7 +21,7 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-.loginbtn {
+.loginbtn:hover {
   background-color: #71c6d2;
   color: white;
   padding: 16px 20px;

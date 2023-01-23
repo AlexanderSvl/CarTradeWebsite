@@ -78,6 +78,11 @@ namespace CarTradeWebsite.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("CoverImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -100,6 +105,9 @@ namespace CarTradeWebsite.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<int>("Mileage")
+                        .HasColumnType("int");
+
                     b.Property<string>("MotorDisplacement")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -117,6 +125,9 @@ namespace CarTradeWebsite.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("YearOfProduction")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

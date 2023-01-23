@@ -30,6 +30,16 @@ namespace CarTradeWebsite.Models
         public string FuelType { get; set; }
 
         [Required]
+        public int Mileage { get; set; }
+
+        [Required]
+        public int YearOfProduction { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Color { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string MotorDisplacement { get; set; }
 

@@ -6,7 +6,7 @@ CarTrade is a car trading website - here you can list you car for sale, search f
 
 Use the following commands to run the project on your machine:
 
-Backend: Open the .sln file and run the project from visual studio. \\n
+Backend: Open the .sln file and run the project from visual studio. <br />
 Frontend: ```ng serve```
 
 ### Used technologies

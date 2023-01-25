@@ -25,8 +25,4 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
-  redirect(car: CarResponseModel){
-    console.log(car.id);
-  }
 }

@@ -68,7 +68,7 @@ namespace CarTradeWebsite.DataAccess.Repositories
                 postToUpdate.CarMake = post.CarMake;
                 postToUpdate.CarModel = post.CarModel;
                 postToUpdate.FuelType = post.FuelType;
-                postToUpdate.MotorDisplacement = post.MotorDisplacement;
+                postToUpdate.EngineDisplacement = post.EngineDisplacement;
                 postToUpdate.TransmissionType = post.TransmissionType;
                 postToUpdate.CarImages = post.CarImages;
                 postToUpdate.Options = post.Options;

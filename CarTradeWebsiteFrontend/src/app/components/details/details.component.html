@@ -1,0 +1,28 @@
+<section class="mainSection">
+    <div class="detailsContainer">
+        <div id="leftDiv">
+            <div id="image">
+                <img [src]="currentCar.coverImageURL">
+            </div>
+            <div id="description">
+                <h1 id="title">"{{currentCar.title}}"</h1>
+                <p>"{{currentCar.description}}"</p>
+            </div>
+        </div>
+        <div id="centerDiv">
+            <div id="mainInfo">
+                <h1>{{currentCar.yearOfProduction}} {{currentCar.carMake}} {{currentCar.carModel}}</h1>
+
+                <h2>Fuel: {{currentCar.fuelType}}</h2>
+                <h2>Motor: {{currentCar.engineDisplacement}}L {{currentCar.engineLayout}}</h2>
+                <h2>Mileage: {{currentCar.mileage}}</h2>
+                <h2>Transmission: {{currentCar.transmissionType}}</h2>
+            </div>
+            <div id="options">
+                <section *ngFor="let option of currentCarOptions">
+                    <p>{{option.name}}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

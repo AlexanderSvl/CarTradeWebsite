@@ -30,6 +30,10 @@ namespace CarTradeWebsite.Models
         public string FuelType { get; set; }
 
         [Required]
+        [StringLength(50)]
+        public string EngineLayout { get; set; }
+
+        [Required]
         public int Mileage { get; set; }
 
         [Required]
@@ -41,7 +45,7 @@ namespace CarTradeWebsite.Models
 
         [Required]
         [StringLength(50)]
-        public string MotorDisplacement { get; set; }
+        public string EngineDisplacement { get; set; }
 
         [Required]
         [StringLength(50)]

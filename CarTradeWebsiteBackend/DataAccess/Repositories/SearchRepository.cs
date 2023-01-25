@@ -44,10 +44,10 @@ namespace CarTradeWebsite.DataAccess.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<PostModel>> SearchMotorDisplacement(string motorDisplacement)
+        public async Task<IEnumerable<PostModel>> SearchEngineDisplacement(string engineDisplacement)
         {
             return await context.Posts
-                .Where(post => post.MotorDisplacement == motorDisplacement)
+                .Where(post => post.EngineDisplacement == engineDisplacement)
                 .ToListAsync();
         }
 

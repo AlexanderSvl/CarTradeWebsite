@@ -80,9 +80,9 @@ namespace CarTradeWebsite.API.Controllers
         }
 
         [HttpGet("search/motorDisplacement")]
-        public async Task<ActionResult<IEnumerable<PostModel>>> SearchMotorDisplacement(string motorDisplacement)
+        public async Task<ActionResult<IEnumerable<PostModel>>> SearchEngineDisplacement(string motorDisplacement)
         {
-            IEnumerable<PostModel> posts = await this._searchRepository.SearchMotorDisplacement(motorDisplacement);
+            IEnumerable<PostModel> posts = await this._searchRepository.SearchEngineDisplacement(motorDisplacement);
 
             if (posts.Count() == 0)
             {

@@ -1,27 +1,32 @@
 <section class="mainSection">
     <div class="detailsContainer">
         <div id="leftDiv">
-            <div id="image">
-                <img [src]="currentCar.coverImageURL">
+            <div id="coverImage">
+                <img [src]="currentCar.coverImageURL" id="main">
             </div>
-            <div id="description">
-                <h1 id="title">"{{currentCar.title}}"</h1>
-                <p>"{{currentCar.description}}"</p>
+            <div id="otherImages">
+                <img [src]="image.url" id="other" *ngFor="let image of currentCarImages" (click)="changePictures(image.id)">
             </div>
         </div>
         <div id="centerDiv">
             <div id="mainInfo">
-                <h1>{{currentCar.yearOfProduction}} {{currentCar.carMake}} {{currentCar.carModel}}</h1>
+                <h1 id="title">"{{currentCar.title}}"</h1>
+                <h2 id="model">{{currentCar.yearOfProduction}} {{currentCar.carMake}} {{currentCar.carModel}}</h2>
 
-                <h2>Fuel: {{currentCar.fuelType}}</h2>
-                <h2>Motor: {{currentCar.engineDisplacement}}L {{currentCar.engineLayout}}</h2>
-                <h2>Mileage: {{currentCar.mileage}}</h2>
-                <h2>Transmission: {{currentCar.transmissionType}}</h2>
+                <p>"{{currentCar.description}}"</p>
+
+                <h2>Odometer: <b>{{currentCar.mileage}} kilometers</b></h2>
+                <h2>Transmission: <b>{{currentCar.transmissionType}}</b></h2>
+                <h2>Fuel type: <b>{{currentCar.fuelType}}</b></h2>
+                <h2>Engine: <b>{{currentCar.engineDisplacement}}L {{currentCar.engineLayout}}</b></h2>
             </div>
+        </div>
+        <div id="rightDiv">
+            <h3>Available options</h3>
             <div id="options">
-                <section *ngFor="let option of currentCarOptions">
-                    <p>{{option.name}}</p>
-                </section>
+                <div *ngFor="let option of currentCarOptions" id="optionsContainer">
+                    <div id="currentOption">{{option.name}}</div>
+                </div>
             </div>
         </div>
     </div>

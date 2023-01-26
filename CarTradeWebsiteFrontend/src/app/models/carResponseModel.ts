@@ -7,7 +7,7 @@ export class CarResponseModel {
     constructor(
     public id: string,
     public title: string,
-    public images: ImageResponseModel[],
+    public carImages: ImageResponseModel[],
     public coverImageURL: string,
     public carMake: string,
     public carModel: string,

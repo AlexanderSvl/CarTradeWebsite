@@ -39,6 +39,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         public async Task<IEnumerable<PostModel>> GetAllPostsAsync()
         {
             return await context.Posts
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -46,6 +48,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.ID == postId)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .FirstAsync();
         }
 

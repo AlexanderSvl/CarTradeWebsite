@@ -20,7 +20,9 @@ import { DetailsComponent } from './components/details/details.component';
     NavigationBarComponent,
     SearchComponent,
     LoginComponent,
-    RegisterComponent],
+    RegisterComponent,
+    DetailsComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -13,6 +13,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.Title.Contains(titleKeywords))
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -20,6 +22,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.Description.Contains(descriptionKeywords))
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -27,6 +31,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.CarMake == carMake)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -34,6 +40,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.CarModel == carModel)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -41,6 +49,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.FuelType == fuelType)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -48,6 +58,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.EngineDisplacement == engineDisplacement)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
 
@@ -55,6 +67,17 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             return await context.Posts
                 .Where(post => post.TransmissionType == transmissionType)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<PostModel>> SearchYearOfProduction(int startYear, int endYear)
+        {
+            return await context.Posts
+                .Where(post => post.YearOfProduction >= startYear && post.YearOfProduction <= endYear)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .ToListAsync();
         }
     }

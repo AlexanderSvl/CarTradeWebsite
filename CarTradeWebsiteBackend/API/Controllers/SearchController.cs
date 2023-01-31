@@ -79,10 +79,10 @@ namespace CarTradeWebsite.API.Controllers
             return Ok(posts);
         }
 
-        [HttpGet("search/motorDisplacement")]
-        public async Task<ActionResult<IEnumerable<PostModel>>> SearchEngineDisplacement(string motorDisplacement)
+        [HttpGet("search/engineDisplacement")]
+        public async Task<ActionResult<IEnumerable<PostModel>>> SearchEngineDisplacement(string engineDisplacement)
         {
-            IEnumerable<PostModel> posts = await this._searchRepository.SearchEngineDisplacement(motorDisplacement);
+            IEnumerable<PostModel> posts = await this._searchRepository.SearchEngineDisplacement(engineDisplacement);
 
             if (posts.Count() == 0)
             {
@@ -96,6 +96,19 @@ namespace CarTradeWebsite.API.Controllers
         public async Task<ActionResult<IEnumerable<PostModel>>> SearchTransmissionType(string transmissionType)
         {
             IEnumerable<PostModel> posts = await this._searchRepository.SearchTransmissionType(transmissionType);
+
+            if (posts.Count() == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(posts);
+        }
+
+        [HttpGet("search/yearOfProduction")]
+        public async Task<ActionResult<IEnumerable<PostModel>>> SearchYearOfProduction(int start, int end)
+        {
+            IEnumerable<PostModel> posts = await this._searchRepository.SearchYearOfProduction(start, end);
 
             if (posts.Count() == 0)
             {

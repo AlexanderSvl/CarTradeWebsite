@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { CarResponseModel } from 'src/app/models/carResponseModel';
 import { CarPostService } from 'src/app/services/CarPostService';
-import { Observable } from 'rxjs';
 import { OptionResponseModel } from 'src/app/models/optionResponseModel';
 import { ImageResponseModel } from 'src/app/models/imageResponseModel';
 
@@ -32,10 +31,11 @@ export class DetailsComponent implements OnInit{
   }
 
   changePictures(id: any){
-    for (let i = 0; i < this.currentCarImages.length; i++) {
-      if(this.currentCarImages[i].id == id){
-        this.currentCar.coverImageURL = this.currentCarImages[i].url;
-      }
-    }
+    let element = document.getElementById(id) as HTMLImageElement;
+    let main = document.getElementById("main") as HTMLImageElement;
+
+    let temp = main.src;
+    main.src = element.src;
+    element.src = temp;
   }
 }

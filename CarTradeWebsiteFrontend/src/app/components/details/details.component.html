@@ -5,7 +5,8 @@
                 <img [src]="currentCar.coverImageURL" id="main">
             </div>
             <div id="otherImages">
-                <img [src]="image.url" id="other" *ngFor="let image of currentCarImages" (click)="changePictures(image.id)">
+                <img [src]="image.url" class="other" *ngFor="let image of currentCarImages" id="{{image.id}}"
+                    (click)="changePictures(image.id)">
             </div>
         </div>
         <div id="centerDiv">
@@ -28,6 +29,12 @@
                     <div id="currentOption">{{option.name}}</div>
                 </div>
             </div>
+
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 2rem;">Price: <b>${{currentCar.price}}</b></p>
+            <button id="buyNowButton">Buy now</button>
         </div>
     </div>
 </section>

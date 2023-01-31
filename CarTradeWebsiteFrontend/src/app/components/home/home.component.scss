@@ -29,7 +29,7 @@
       width: 20rem;
       height: 13rem;
       border: 0.4rem solid #93d4dd;
-      border-radius: 2rem;  
+      border-radius: 1rem;  
     }
   }
 
@@ -42,7 +42,13 @@
   .description {
     margin: 0 auto;
     width: 25%;
-    text-align: center;
+    text-align: justify;
+
+    p {
+      font-style: italic;;
+      max-width: 90%;
+      margin-left: 2rem;
+    }
   }
 
   .price {

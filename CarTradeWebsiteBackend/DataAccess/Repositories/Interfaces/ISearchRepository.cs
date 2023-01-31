@@ -11,5 +11,6 @@ namespace CarTradeWebsite.DataAccess.Repositories.Interfaces
         public Task<IEnumerable<PostModel>> SearchFuelType(string fuelType);
         public Task<IEnumerable<PostModel>> SearchEngineDisplacement(string motorDisplacement);
         public Task<IEnumerable<PostModel>> SearchTransmissionType(string transmissionType);
+        public Task<IEnumerable<PostModel>> SearchYearOfProduction(int startYear, int endYear);
     }
 }

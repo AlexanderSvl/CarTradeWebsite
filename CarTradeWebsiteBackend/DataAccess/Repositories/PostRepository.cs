@@ -63,6 +63,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
         {
             PostModel postToUpdate = await context.Posts
                 .Where(p => p.ID == postID)
+                .Include(x => x.Options)
+                .Include(y => y.CarImages)
                 .FirstAsync();
 
             if(postToUpdate != null)

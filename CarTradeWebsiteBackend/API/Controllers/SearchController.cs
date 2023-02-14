@@ -28,9 +28,9 @@ namespace CarTradeWebsite.API.Controllers
         }
 
         [HttpGet("search/description")]
-        public async Task<ActionResult<IEnumerable<PostModel>>> SearchDescription(string deescriptionKeywords)
+        public async Task<ActionResult<IEnumerable<PostModel>>> SearchDescription(string descriptionKeywords)
         {
-            IEnumerable<PostModel> posts = await this._searchRepository.SearchDescription(deescriptionKeywords);
+            IEnumerable<PostModel> posts = await this._searchRepository.SearchDescription(descriptionKeywords);
 
             if (posts.Count() == 0)
             {

@@ -178,3 +178,4 @@ C:\Users\User\source\repos\CarTradeWebsite\CarTradeWebsiteBackend\obj\Debug\net6
 C:\Users\User\source\repos\CarTradeWebsite\CarTradeWebsiteBackend\obj\Debug\net6.0\ref\CarTradeWebsite.dll
 C:\Users\User\source\repos\CarTradeWebsite\CarTradeWebsiteBackend\obj\Debug\net6.0\CarTradeWebsite.pdb
 C:\Users\User\source\repos\CarTradeWebsite\CarTradeWebsiteBackend\obj\Debug\net6.0\CarTradeWebsite.genruntimeconfig.cache
+C:\Users\User\source\repos\CarTradeWebsite\CarTradeWebsiteBackend\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

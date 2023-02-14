@@ -4,6 +4,8 @@ import { HttpClient} from '@angular/common/http';
 import { Router } from "@angular/router";
 import { routePaths } from 'src/app/constants/routes';
 import { Validation } from '../../constants/validations'
+import { AuthenticationService } from 'src/app/services/AuthenticationService';
+import { json } from 'stream/consumers';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent {
   isInputValid = false;
   errorMessage = '';
 
-  constructor(private http: HttpClient, private router: Router){}
+  constructor(private http: HttpClient, private router: Router, private authenticationServece: AuthenticationService){}
 
   onSubmit(){
     this.checkValidation();
@@ -70,6 +72,8 @@ export class LoginComponent {
   }
 
   login(data:UserLoginModel){
-    console.log(data);
+    console.log(this.authenticationServece.login(data).subscribe(x => {
+      console.log(x)
+    }));
   };
 }

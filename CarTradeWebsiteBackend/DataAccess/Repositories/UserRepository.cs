@@ -11,6 +11,11 @@ namespace CarTradeWebsite.DataAccess.Repositories
 
         public async Task<UserModel> CreateUserAsync(UserModel user)
         {
+            if(context.Users.Any(x => x.Email == user.Email))
+            {
+                return null;
+            }
+
             await context.Users.AddAsync(user);
             await context.SaveChangesAsync();
 

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent {
-
+  isAuthorized = false;
 }

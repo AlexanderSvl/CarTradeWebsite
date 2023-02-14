@@ -1,20 +1,36 @@
 <section class="searchBox">
-  <label for="search" id="searchLabel">Search</label>
-  <input type="text" id="searchBox" name="search">
-  <form>
+  <form (ngSubmit)="onSubmit()">
+    <label for="search" id="searchLabel">Search</label>
+    <input type="text" id="searchBox" name="search" [(ngModel)]="searchTerms">
+
     <a id="searchByLabel">Search by:</a>
-    <select id="seacrhDropdownBox">
+
+    <select #options id="seacrhDropdownBox" (change)="onSelect(options.value)">
       <option>Title</option>
       <option>Description</option>
       <option>Car Make</option>
       <option>Car Model</option>
-      <option>Motor Displacement</option>
+      <option>Engine Displacement</option>
       <option>Transmission Type</option>
     </select>
 
     <a id="year">Year:</a>
 
-    <input type="number" placeholder="From..." class="inputYear" [(ngModel)]="startYear"]>
-    <input type="number" placeholder="To..." class="inputYear" [(ngModel)]="endYear">
+    <input type="text" placeholder="From..." class="inputYear" name="startYear" [(ngModel)]="startYear">
+    <input type="text" placeholder="To..." class="inputYear" name="endYear" [(ngModel)]="endYear">
+
+    <br>
+    <a id="searchByLabel">Fuel Type (leave blank for Electric)</a>
+
+    <select #options id="seacrhDropdownBox" (change)="onSelect(options.value)">
+      <option default></option>
+      <option>Gasoline</option>
+      <option>Diesel</option>
+      <option>LPG</option>
+      <option>Methane</option>
+      <option>Electric</option>
+    </select>
+
+    <button type="submit" class="searchbtn">Search</button>
   </form>
 </section>

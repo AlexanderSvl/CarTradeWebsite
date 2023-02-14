@@ -32,4 +32,18 @@
         font-family:'Montserrat'; 
         font-size: 22px;
     }
+
+    .searchbtn {
+        background-color: #71c6d2;
+        color: white;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    .searchbtn:hover {
+        opacity:1;
+    }
 }

@@ -8,38 +8,38 @@ import { CarResponseModel } from '../models/carResponseModel';
   providedIn: 'root'
 })
 
-export class CarPostService {
+export class SearchService {
     constructor(private http: HttpClient){}
 
-    searchTitle(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/title`);
+    searchTitle(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/title?titleKeywords=${keywords}`);
     }
 
-    searchDescription(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/description`);
+    searchDescription(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/description?descriptionKeywords=${keywords}`);
     }
 
-    searchCarMake(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/carMake`);
+    searchCarMake(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/carMake?carMake=${keywords}`);
     }
 
-    searchModel(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/carModel`);
+    searchCarModel(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/carModel?carModel=${keywords}`);
     }
 
-    searchFuelType(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/fuelType`);
+    searchFuelType(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/fuelType?fuelType=${keywords}`);
     }
 
-    searchEngineDisplacement(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/engineDisplacement`);
+    searchEngineDisplacement(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/engineDisplacement?engineDisplacement=${keywords}`);
     }
 
-    searchTransmissionType(): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/transmissionType`);
+    searchTransmissionType(keywords: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/transmissionType?transmissionType=${keywords}`);
     }
 
-    searchYearOfProduction(startYear: number, endYear: number): Observable<CarResponseModel> {
-        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/yearOfProduction`);
+    searchYearOfProduction(start: string, end: string): Observable<CarResponseModel> {
+        return this.http.get<CarResponseModel>(`${environment.baseUrl}/search/yearOfProduction?start=${start}&end=${end}`);
     }
 }

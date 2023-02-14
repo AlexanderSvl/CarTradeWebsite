@@ -14,7 +14,7 @@
           </li>
         </ul>
 
-        <div class="collapse navbar-collapse" id="left">
+        <div class="collapse navbar-collapse" id="left" *ngIf="!isAuthorized">
           <a class="nav-link active" routerLinkActive="border border-info rounded" routerLink="/register">Sign Up</a>
           <a class="nav-link" routerLinkActive="border border-info rounded" routerLink="/login">Login</a> 
         </div>

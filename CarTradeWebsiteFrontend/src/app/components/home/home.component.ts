@@ -7,6 +7,7 @@ import { OptionModel } from 'src/app/models/optionModel';
 import { ImageModel } from 'src/app/models/imageModel';
 import { json } from 'stream/consumers';
 import { routePaths } from '../../constants/routes'
+import { setTimeout } from 'timers/promises';
 
 @Component({
   selector: 'app-home',
@@ -24,5 +25,13 @@ export class HomeComponent implements OnInit {
         this.cars.push(res[i]);
       }
     });
+
+    window.setTimeout(() => {
+      document.getElementById("odometer")!.innerHTML = "234";
+    })
+  }
+
+  numberWithCommas(x: any) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 }

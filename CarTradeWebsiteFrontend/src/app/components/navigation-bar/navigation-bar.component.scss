@@ -1,6 +1,6 @@
 nav {
-    background-color: #93d4dd !important;
-    height: 5rem;
+    background-color: #ff7b00 !important;
+    height: 7rem;
 
     .navbar-brand {
         margin-left: 3rem;
@@ -19,7 +19,7 @@ nav {
 
 .nav-link {
     padding: 0.7rem;
-    background-color: #71c6d2;
+    background-color: #ff7b00;
     color: white !important;
     border-color: seashell !important;
     border: 0.1rem solid whitesmoke !important;
@@ -27,7 +27,7 @@ nav {
 }
 
 #left{
-    margin-left: 30rem;
+    margin-left: 40%;
     float: left;
 
     a {
@@ -35,4 +35,24 @@ nav {
         width: 8rem;
         text-align: center;
     }
+}
+
+#right {
+    margin-left: 60%;
+    float: left;
+
+    a {
+        margin-left: 1rem;
+        width: 8rem;
+        text-align: center;
+    }
+}
+
+.logout {
+    padding: 0.7rem;
+    background-color: #ff7b00;
+    color: white !important;
+    border-color: seashell !important;
+    border: 0.1rem solid whitesmoke !important;
+    border-radius: 0.6rem !important;
 }

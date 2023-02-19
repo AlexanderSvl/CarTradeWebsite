@@ -14,6 +14,18 @@ export class AuthenticationService {
     constructor(private http: HttpClient){}
 
     login(data: UserLoginModel): Observable<AuthenticatedResponseModel> {
-        return this.http.post<AuthenticatedResponseModel>(`${environment.baseUrl}/login`, data);
+      return this.http.post<AuthenticatedResponseModel>(`${environment.baseUrl}/login`, data);
+    }
+
+    storeToken(token: string){
+      localStorage.setItem('token', token);
+    }
+
+    isLoggedIn(): boolean {
+      return !!localStorage.getItem('token');
+    }
+
+    logout(): void {
+      localStorage.clear();
     }
 }

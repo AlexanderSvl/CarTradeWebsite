@@ -6,6 +6,7 @@ import { routePaths } from 'src/app/constants/routes';
 import { Validation } from '../../constants/validations'
 import { AuthenticationService } from 'src/app/services/AuthenticationService';
 import { json } from 'stream/consumers';
+import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +18,14 @@ export class LoginComponent {
   isInputValid = false;
   errorMessage = '';
 
-  constructor(private http: HttpClient, private router: Router, private authenticationServece: AuthenticationService){}
+  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService){}
 
   onSubmit(){
     this.checkValidation();
     
     if(this.isInputValid){
       this.login(this.loginModel);
+      this.router.navigate(['home'])
     }
     else{
       alert(this.errorMessage);
@@ -72,8 +74,9 @@ export class LoginComponent {
   }
 
   login(data:UserLoginModel){
-    console.log(this.authenticationServece.login(data).subscribe(x => {
-      console.log(x)
-    }));
+    this.authenticationService.login(data).subscribe(x => {
+      this.authenticationService.storeToken(x.token);
+      NavigationBarComponent.isAuthorized = true;
+    }); 
   };
 }

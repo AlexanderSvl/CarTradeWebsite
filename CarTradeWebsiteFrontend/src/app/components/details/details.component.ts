@@ -40,4 +40,8 @@ export class DetailsComponent implements OnInit{
     main.src = element.src;
     element.src = temp;
   }
+
+  numberWithCommas(x: any) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
 }

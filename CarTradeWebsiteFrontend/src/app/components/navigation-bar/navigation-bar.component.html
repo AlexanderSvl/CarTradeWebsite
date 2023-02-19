@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home">Mbobile.com - Trade & Sell</a>
+      <a class="navbar-brand" routerLink="/home">Carmotive - Find your new car!</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,6 +17,10 @@
         <div class="collapse navbar-collapse" id="left" *ngIf="!isAuthorized">
           <a class="nav-link active" routerLinkActive="border border-info rounded" routerLink="/register">Sign Up</a>
           <a class="nav-link" routerLinkActive="border border-info rounded" routerLink="/login">Login</a> 
+        </div>
+
+        <div class="collapse navbar-collapse" id="right" *ngIf="isAuthorized">
+          <button class="logout" routerLinkActive="border border-info rounded" (click)="logout()">Logout</button> 
         </div>
       </div>
     </div>

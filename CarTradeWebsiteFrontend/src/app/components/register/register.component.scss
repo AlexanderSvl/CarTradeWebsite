@@ -22,7 +22,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .registerbtn {
-  background-color: #71c6d2;
+  background-color: #ff7b00;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -42,5 +42,6 @@ a {
 
 .signin {
   background-color: #f1f1f1;
-  text-align: center;
+  text-align: center; 
+  margin-bottom: 4rem;
 }

@@ -3,13 +3,15 @@
 </section>
 
 <section *ngFor="let car of cars">
-<div class="post" routerLinkActive="border border-info rounded" routerLink="/posts/{{car.id}}">
+    <div class="post" routerLinkActive="border border-info rounded" routerLink="/posts/{{car.id}}">
         <div class="image">
             <img [src]="car.coverImageURL">
         </div>
         <div class="info">
             <h1>{{car.title}}</h1>
             <h2>{{car.carMake}} {{car.carModel}}</h2>
+            <br>
+            <h4>Mileage: {{numberWithCommas(car.mileage)}}</h4>
         </div>
         <div class="description">
             <p>"{{car.description}}"</p>

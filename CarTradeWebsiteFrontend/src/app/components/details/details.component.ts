@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit{
     element.src = temp;
   }
 
-  numberWithCommas(x: any) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  numberWithCommas(number: any, spacer: string) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, spacer);
   }
 }

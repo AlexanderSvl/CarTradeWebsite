@@ -27,21 +27,31 @@
   .image {
     float: left;
     width: 25%;
+    text-align: center;
 
     img {
-      margin: 3rem;
+      margin: 2rem 3rem 0.5rem 3rem;
       width: 90%;
       height: 90%;
       border: 0.2rem solid black;
       border-radius: 0.6rem;  
     }
+
+    h1 {
+      margin-left: 3rem;
+      margin-bottom: 1rem;
+    }
   }
 
   .info {
     margin: 0 auto;
-    width: 25%;
+    width: 35%;
     margin-left: 3rem;
     padding: 2rem;
+
+    h1 {
+      
+    }
 
     h2 {
       font-weight: 100;
@@ -56,18 +66,22 @@
     margin: 0 auto;
     width: 25%;
     text-align: justify;
+    margin-right: 5rem;
 
     p {
-      font-style: italic;;
+      font-style: italic;
       max-width: 90%;
       margin-left: 2rem;
     }
-  }
 
-  .price {
-    margin-right: 5rem;
-    float: right;
-    width: 15%;
-    text-align: right;
+    h4{
+      text-align: center;
+      margin-bottom: 1rem;
+    }
   }
+}
+
+section :hover {
+  opacity: 0.7;
+  cursor: pointer;
 }

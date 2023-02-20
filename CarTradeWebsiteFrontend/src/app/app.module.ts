@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from "@angular/forms";
 import { DetailsComponent } from './components/details/details.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailsComponent } from './components/details/details.component';
     SearchComponent,
     LoginComponent,
     RegisterComponent,
-    DetailsComponent
+    DetailsComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

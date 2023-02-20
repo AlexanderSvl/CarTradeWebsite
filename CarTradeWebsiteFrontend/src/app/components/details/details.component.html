@@ -16,7 +16,7 @@
 
                 <p>"{{currentCar.description}}"</p>
 
-                <h2>Odometer: <b>{{numberWithCommas(currentCar.mileage)}} kilometers</b></h2>
+                <h2>Odometer: <b>{{numberWithCommas(currentCar.mileage, " ")}} kilometers</b></h2>
                 <h2>Transmission: <b>{{currentCar.transmissionType}}</b></h2>
                 <h2>Fuel type: <b>{{currentCar.fuelType}}</b></h2>
                 <h2>Engine: <b>{{currentCar.engineDisplacement}}L {{currentCar.engineLayout}}</b></h2>
@@ -33,7 +33,7 @@
             <br>
             <br>
             <br>
-            <p style="font-size: 2rem;">Price: <b>${{currentCar.price}}</b></p>
+            <p style="font-size: 2rem;">Price: <b>${{numberWithCommas(currentCar.price, ",")}}</b></p>
             <button id="buyNowButton">Buy now</button>
         </div>
     </div>

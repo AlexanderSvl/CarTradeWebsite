@@ -25,13 +25,9 @@ export class HomeComponent implements OnInit {
         this.cars.push(res[i]);
       }
     });
-
-    window.setTimeout(() => {
-      document.getElementById("odometer")!.innerHTML = "234";
-    })
   }
 
-  numberWithCommas(x: any) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  numberWithCommas(number: any, spacer: string) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, spacer);
   }
 }

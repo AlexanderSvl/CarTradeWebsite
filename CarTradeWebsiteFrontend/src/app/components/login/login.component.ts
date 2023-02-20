@@ -25,7 +25,6 @@ export class LoginComponent {
     
     if(this.isInputValid){
       this.login(this.loginModel);
-      this.router.navigate(['home'])
     }
     else{
       alert(this.errorMessage);
@@ -77,6 +76,9 @@ export class LoginComponent {
     this.authenticationService.login(data).subscribe(x => {
       this.authenticationService.storeToken(x.token);
       NavigationBarComponent.isAuthorized = true;
+      this.router.navigate(['home'])
+    }, err => {
+      alert("Incorrect email or password.")
     }); 
   };
 }

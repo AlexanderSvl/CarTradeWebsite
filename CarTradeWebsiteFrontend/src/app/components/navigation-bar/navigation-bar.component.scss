@@ -43,7 +43,7 @@ nav {
 }
 
 #right {
-    margin-left: 60%;
+    margin-left: 45%;
     float: left;
 
     a {
@@ -55,6 +55,16 @@ nav {
 
 .logout {
     padding: 0.7rem;
+    background-color: #ff7b00;
+    color: white !important;
+    border-color: seashell !important;
+    border: 0.1rem solid whitesmoke !important;
+    border-radius: 0.6rem !important;
+}
+
+.addListing{
+    padding: 0.7rem;
+    margin-right: 1rem;
     background-color: #ff7b00;
     color: white !important;
     border-color: seashell !important;

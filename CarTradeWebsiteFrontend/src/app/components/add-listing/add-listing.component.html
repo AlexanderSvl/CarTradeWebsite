@@ -1,1 +1,39 @@
-<p>add-listing works!</p>
+<form action="action_page.php">
+    <div class="container">
+        <h1>List your car on DeltaCar</h1>
+        <p>Please fill in the details for your car.</p>
+        <hr>
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Listing Title" name="title" id="title" required>
+
+        <label for="description"><b>Description</b></label>
+        <textarea type="text" placeholder="Listing description" name="description" id="description" required></textarea>
+
+        <div id="carInfo">
+            <div class="fl">
+                <label for="userName"><b>Car Make</b></label>
+                <input type="text" placeholder="Enter your username" name="userName" id="userName" required>
+
+            </div>
+            &nbsp; 
+            &nbsp; 
+            &nbsp; 
+            &nbsp; 
+            <div class="fl">
+                <label for="email"><b>Car Model</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            </div>
+        </div>
+
+
+        <label for="psw"><b>Password</b></label>
+        <input type="text" placeholder="Enter Password" name="password" id="password" autocomplete="on" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="text" placeholder="Repeat Password" name="password-repeat" id="password-repeat" autocomplete="on">
+        <hr>
+
+        <button type="submit" class="registerbtn">Register</button>
+    </div>
+</form>

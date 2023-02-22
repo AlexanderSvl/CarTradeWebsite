@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+* {
+  font-family: "Montserrat";
+}
+
+.container {
+  margin-top: 3rem;
+  padding: 16px;
+  width: 70%;
+}
+
+#description {
+  height: 10rem;
+}
+
+input[type="text"],
+input[type="password"], 
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 5rem;
+}
+
+#carInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .fl {
+    width: 50%;
+  }
+  
+  input[type="text"]{
+    background-color: blue;
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    display: block;
+  }
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.registerbtn {
+  background-color: #ff7b00;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-bottom: 4rem;
+}

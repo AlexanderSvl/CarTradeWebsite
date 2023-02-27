@@ -25,8 +25,12 @@ export class DetailsComponent implements OnInit{
   ngOnInit(): void {
     this.postService.getPostById(this.currentId).subscribe((res: any) => {
       this.currentCar = res;
+      this.currentCarImages.push(
+        new ImageResponseModel("1", this.currentCar.coverImageURL)
+      )
       this.currentCarOptions = this.currentCar.options;
       this.currentCarImages = this.currentCar.carImages;
+
 
       console.log(this.currentCar)
     });
@@ -36,9 +40,7 @@ export class DetailsComponent implements OnInit{
     let element = document.getElementById(id) as HTMLImageElement;
     let main = document.getElementById("main") as HTMLImageElement;
 
-    let temp = main.src;
     main.src = element.src;
-    element.src = temp;
   }
 
   numberWithCommas(number: any, spacer: string) {

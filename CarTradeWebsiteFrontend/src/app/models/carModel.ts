@@ -6,6 +6,7 @@ export class CarModel {
     constructor(
     public title: string,
     public images: ImageModel[],
+    public coverImageURL: string,
     public carMake: string,
     public carModel: string,
     public fuelType: string,

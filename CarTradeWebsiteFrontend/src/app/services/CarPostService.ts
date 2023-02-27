@@ -19,4 +19,8 @@ export class CarPostService {
     getPostById(ID: String): Observable<CarResponseModel> {
         return this.http.get<CarResponseModel>(`${environment.baseUrl}/posts/get/${ID}`);
     }
+
+    createPost(data: any): Observable<CarResponseModel> {
+        return this.http.post<CarResponseModel>(`${environment.baseUrl}/posts/new`, data, {headers:{'Content-Type':'application/json'}});
+    }
 }

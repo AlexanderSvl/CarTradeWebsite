@@ -1,19 +1,19 @@
-<form action="action_page.php">
+<form action="action_page.php" (ngSubmit)="onSubmit()">
     <div class="container">
         <h1>List your car on DeltaCar</h1>
         <p>Please fill in the details for your car.</p>
         <hr>
 
         <label for="title"><b>Title</b></label>
-        <input type="text" placeholder="Listing Title" name="title" id="title" required>
+        <input type="text" placeholder="Selling a 1978 Honda..." name="title" id="title" required [(ngModel)]="car.title">
 
         <label for="description"><b>Description</b></label>
-        <textarea type="text" placeholder="Listing description" name="description" id="description" required></textarea>
+        <textarea type="text" placeholder="The car is in great condition..." name="description" id="description" required [(ngModel)]="car.description"></textarea>
 
         <div id="carInfo">
             <div class="fl">
                 <label for="userName"><b>Car Make</b></label>
-                <input type="text" placeholder="Enter your car's make" name="userName" id="userName" required>
+                <input type="text" placeholder="Honda, Toyota, BMW..." name="carMake" id="carMake" required [(ngModel)]="car.carMake">
             </div>
             &nbsp;
             &nbsp;
@@ -21,14 +21,14 @@
             &nbsp;
             <div class="fl">
                 <label for="email"><b>Car Model</b></label>
-                <input type="text" placeholder="Enter your car's model" name="email" id="email" required>
+                <input type="text" placeholder="Prelude, Avensis, 320d..." name="carModel" id="carModel" required [(ngModel)]="car.carModel">
             </div>
         </div>
 
         <div id="carInfo">
             <div class="fl">
-                <label for="userName"><b>Mileage</b></label>
-                <input type="text" placeholder="Enter mileage" name="userName" id="userName" required>
+                <label for="userName"><b>Transmission Type</b></label>
+                <input type="text" placeholder="5-speed manual..." name="transmission" id="transmission" required [(ngModel)]="car.transmissionType">
             </div>
             &nbsp;
             &nbsp;
@@ -36,7 +36,7 @@
             &nbsp;
             <div class="fl">
                 <label for="email"><b>Fuel Type</b></label>
-                <select type="text" placeholder="Enter fuel type" name="email" id="email" required>
+                <select type="text" placeholder="Enter fuel type" name="fuel" id="fuel" required [(ngModel)]="car.fuelType">
                     <option value="" selected disabled hidden>Enter fuel type</option>
                     <option value="gasoline">Gasoline</option>
                     <option value="diesel">Diesel</option>
@@ -49,8 +49,8 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Engine Layout</b></label>
-                <input type="text" placeholder="Enter engine layout" name="email" id="email" required>
+                <label for="email"><b>Engine displacement</b></label>
+                <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required [(ngModel)]="car.engineDisplacement">
             </div>
             &nbsp;
             &nbsp;
@@ -58,16 +58,49 @@
             &nbsp;
             <div class="fl">
                 <label for="email"><b>Color</b></label>
-                <input type="text" placeholder="Enter color" name="email" id="email" required>
+                <input type="text" placeholder="brown, red, gray" name="color" id="color" required [(ngModel)]="car.color">
             </div>
         </div>
 
+        <div id="carInfo">
+            <div class="fl">
+                <label for="userName"><b>Year of production</b></label>
+                <input type="text" placeholder="2001..." name="year" id="year" required [(ngModel)]="car.yearOfProduction">
+            </div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div class="fl">
+                <label for="userName"><b>Mileage</b></label>
+                <input type="text" placeholder="60340..." name="mileage" id="mileage" required [(ngModel)]="car.mileage">
+            </div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div class="fl">
+                <label for="email"><b>Engine Layout</b></label>
+                <input type="text" placeholder="I4, V6..." name="email" id="email" required [(ngModel)]="car.engineLayout">
+            </div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div class="fl">
+                <label for="email"><b>Location</b></label>
+                <input type="text" placeholder="Sofia, London, Paris..." name="email" id="email" required [(ngModel)]="car.location">
+            </div>
+        </div>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="text" placeholder="Enter Password" name="password" id="password" autocomplete="on" required>
+        <label for="psw"><b>Options (separated by spaces and/or commas)</b></label>
+        <input type="text" placeholder="ABS, Stereo, Sunroof... " name="password" id="password" autocomplete="on" required id="options">
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="text" placeholder="Repeat Password" name="password-repeat" id="password-repeat" autocomplete="on">
+        <label for="psw"><b>Images's .jpg web address (DEV) (separated by spaces and/or commas)</b></label>
+        <input id="images" type="text" placeholder="https://yourphotowebsite.com/car.jpg, https://yourphotowebsite.com/car.jpg2... " name="password" autocomplete="on" required>
+
+        <label for="psw-repeat"><b>Enter the car's price</b></label>
+        <input type="text" placeholder="45000, 5600, 100200..." name="password-repeat" id="password-repeat" autocomplete="on" [(ngModel)]="car.price">
         <hr>
 
         <button type="submit" class="registerbtn">Publish your listing</button>

@@ -38,7 +38,7 @@ export class LoginComponent {
     let emailCheck = false;
     let passwordCheck = false;
 
-    if(!Validation.emailValidation.test(this.loginModel.email)) {
+    if(!Validation.userValidations.emailValidation.test(this.loginModel.email)) {
       emailCheck = false;
       emailElement.style.borderBottomColor = 'red';
       emailElement.style.borderBottom = '3px solid red'
@@ -52,7 +52,7 @@ export class LoginComponent {
 
     //////
 
-    if(Validation.passwordValidation.test(this.loginModel.password)) {
+    if(Validation.userValidations.passwordValidation.test(this.loginModel.password)) {
       passwordCheck = true;
       passwordElement.style.borderBottomColor = 'green';
       passwordElement.style.borderBottom = '3px solid green'

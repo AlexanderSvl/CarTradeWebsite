@@ -50,17 +50,14 @@ export class RegisterComponent implements OnInit {
     let emailCheck = false;
     let passwordCheck = false;
 
-    console.log(1);
 
-    if(!Validation.nameValidation.test(this.registerModel.firstName)) {
+    if(!Validation.userValidations.nameValidation.test(this.registerModel.firstName)) {
       firstNameCheck = false;
       firstNameElement.style.borderBottomColor = 'red';
       firstNameElement.style.borderBottom = '3px solid red'
       this.errorMessage = "Invalid first name!"
-      console.log(2);
     }
     else {
-      console.log(3);
       firstNameCheck = true;
       firstNameElement.style.borderBottomColor = 'green';
       firstNameElement.style.borderBottom = '3px solid green'
@@ -68,7 +65,7 @@ export class RegisterComponent implements OnInit {
 
     //////
 
-    if(!Validation.nameValidation.test(this.registerModel.lastName)) {
+    if(!Validation.userValidations.nameValidation.test(this.registerModel.lastName)) {
       lastNameCheck = false;
       lastNameElement.style.borderBottomColor = 'red';
       lastNameElement.style.borderBottom = '3px solid red'
@@ -82,7 +79,7 @@ export class RegisterComponent implements OnInit {
     
     //////
 
-    if(!Validation.userNameValidation.test(this.registerModel.userName)){
+    if(!Validation.userValidations.userNameValidation.test(this.registerModel.userName)){
       userNameCheck = false;
       userNameElement.style.borderBottomColor = 'red';
       userNameElement.style.borderBottom = '3px solid red'
@@ -96,7 +93,7 @@ export class RegisterComponent implements OnInit {
 
     //////
 
-    if(!Validation.emailValidation.test(this.registerModel.email)) {
+    if(!Validation.userValidations.emailValidation.test(this.registerModel.email)) {
       emailCheck = false;
       emailElement.style.borderBottomColor = 'red';
       emailElement.style.borderBottom = '3px solid red'
@@ -110,7 +107,7 @@ export class RegisterComponent implements OnInit {
 
     //////
 
-    if(Validation.passwordValidation.test(this.registerModel.password) && Validation.passwordValidation.test(this.repeatedPassword) 
+    if(Validation.userValidations.passwordValidation.test(this.registerModel.password) && Validation.userValidations.passwordValidation.test(this.repeatedPassword) 
        && this.repeatedPassword == this.registerModel.password && this.repeatedPassword.length > 0) {
       passwordCheck = true;
       passwordElement.style.borderBottomColor = 'green';

@@ -22,7 +22,7 @@ export class AddListingComponent {
   onSubmit(){
     this.addImagesAndOptions();
     this.car.dateOfCreation = new Date;
-    this.car.coverImageURL = this.images.reverse().pop().URL;
+    this.car.coverImageURL = this.images.find(x=>x!==undefined).URL;
     
     if(this.isInputValid){
       this.createPost();
@@ -91,7 +91,7 @@ export class AddListingComponent {
     let listingEngineDisplacementElement = document.getElementById('engineDisplacement') as HTMLElement;
     let listingLocationElement = document.getElementById('location') as HTMLElement;
     let listingColorElement = document.getElementById('color') as HTMLElement;
-    let listingLayoutElement = document.getElementById('engineLayout') as HTMLElement;
+    let listingEngineLayoutElement = document.getElementById('engineLayout') as HTMLElement;
 
     let titleCheck = false;
     let descriptionCheck = false;
@@ -100,6 +100,7 @@ export class AddListingComponent {
     let engineDisplacementCheck = false;
     let locationCheck = false;
     let colorCheck = false;
+    let engineLayoutCheck = false;
 
     if(Validation.listingValidations.listingTitleValidation.test(this.car.title)){
       titleCheck = true;
@@ -188,6 +189,19 @@ export class AddListingComponent {
       colorCheck = false;
       listingColorElement.style.borderBottomColor = 'red';
       listingColorElement.style.borderBottom = '3px solid red'
+    }
+
+     /////
+
+    if(Validation.listingValidations.listingEngineLayoutValidation.test(this.car.engineLayout)){
+      engineLayoutCheck = true;
+      listingEngineLayoutElement.style.borderBottomColor = 'green';
+      listingEngineLayoutElement.style.borderBottom = '3px solid green'
+    }
+    else{
+      engineLayoutCheck = false;
+      listingEngineLayoutElement.style.borderBottomColor = 'red';
+      listingEngineLayoutElement.style.borderBottom = '3px solid red'
     }
 
     if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && engineDisplacementCheck && locationCheck && colorCheck){

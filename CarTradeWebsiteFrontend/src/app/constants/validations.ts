@@ -11,6 +11,6 @@ export const Validation = {
         carMakeModelColorValidation: /^[A-Za-z._-\d ].{1,15}$/,
         listingLocationValidation: /^[A-Za-z].{1,20}$/,
         listingEngineDisplacementValidation: /^\d{1}.\d{1}$/,
-        listingEngineLayoutValidation: /^[A-Z]{1}\d{1}$/
+        listingEngineLayoutValidation: /^[A-Z]{1}\d{1,2}$/
     }
 }

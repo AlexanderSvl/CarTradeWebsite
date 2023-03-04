@@ -31,7 +31,6 @@ export class DetailsComponent implements OnInit{
       this.currentCarOptions = this.currentCar.options;
       this.currentCarImages = this.currentCar.carImages;
 
-
       console.log(this.currentCar)
     });
   }

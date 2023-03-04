@@ -14,7 +14,7 @@ import { Validation } from 'src/app/constants/validations';
 export class AddListingComponent {
   images: ImageModel[] = [];
   options: OptionModel[] = [];
-  car = new CarModel("", this.images, "", "", "", "", "", 0, 0, "", "", "", "", "", 0, this.options, new Date);
+  car = new CarModel("", this.images, "", "", "", "", "", null, null, "", "", "", "", "", null, this.options, new Date);
   isInputValid = false;
 
   constructor(private postService: CarPostService, private router: Router){}
@@ -22,9 +22,14 @@ export class AddListingComponent {
   onSubmit(){
     this.addImagesAndOptions();
     this.car.dateOfCreation = new Date;
-    this.car.coverImageURL = this.images[0].URL;
+    this.car.coverImageURL = this.images.reverse().pop().URL;
     
-    this.createPost();
+    if(this.isInputValid){
+      this.createPost();
+    }
+    else {
+      alert("Invalid form! Check your infomation.")
+    }
   }
 
   createPost(){
@@ -49,12 +54,10 @@ export class AddListingComponent {
     }
 
     const jsonRequest = JSON.stringify(data);
-    console.log(jsonRequest);
     this.postService.createPost(jsonRequest).subscribe(x => {
       alert("Success!")
       this.router.navigate(['home'])
     }, err => {
-      console.log(err)
       alert("Incorrect email or password.")
     }); 
   }
@@ -87,6 +90,8 @@ export class AddListingComponent {
     let listingCarModelElement = document.getElementById('carModel') as HTMLElement;
     let listingEngineDisplacementElement = document.getElementById('engineDisplacement') as HTMLElement;
     let listingLocationElement = document.getElementById('location') as HTMLElement;
+    let listingColorElement = document.getElementById('color') as HTMLElement;
+    let listingLayoutElement = document.getElementById('engineLayout') as HTMLElement;
 
     let titleCheck = false;
     let descriptionCheck = false;
@@ -94,6 +99,7 @@ export class AddListingComponent {
     let carModelCheck = false;
     let engineDisplacementCheck = false;
     let locationCheck = false;
+    let colorCheck = false;
 
     if(Validation.listingValidations.listingTitleValidation.test(this.car.title)){
       titleCheck = true;
@@ -106,6 +112,8 @@ export class AddListingComponent {
       listingTitleElement.style.borderBottom = '3px solid red'
     }
 
+    /////
+
     if(Validation.listingValidations.listingDescriptionValidation.test(this.car.description)){
       descriptionCheck = true;
       listingDescriptionElement.style.borderBottomColor = 'green';
@@ -116,8 +124,10 @@ export class AddListingComponent {
       listingDescriptionElement.style.borderBottomColor = 'red';
       listingDescriptionElement.style.borderBottom = '3px solid red'
     }
+    
+    /////
 
-    if(Validation.listingValidations.carMakeModelValidation.test(this.car.carMake)){
+    if(Validation.listingValidations.carMakeModelColorValidation.test(this.car.carMake)){
       carMakeCheck = true;
       listingCarMakeElement.style.borderBottomColor = 'green';
       listingCarMakeElement.style.borderBottom = '3px solid green'
@@ -128,7 +138,9 @@ export class AddListingComponent {
       listingCarMakeElement.style.borderBottom = '3px solid red'
     }
 
-    if(Validation.listingValidations.carMakeModelValidation.test(this.car.carModel)){
+    /////
+
+    if(Validation.listingValidations.carMakeModelColorValidation.test(this.car.carModel)){
       carModelCheck = true;
       listingCarModelElement.style.borderBottomColor = 'green';
       listingCarModelElement.style.borderBottom = '3px solid green'
@@ -138,6 +150,8 @@ export class AddListingComponent {
       listingCarModelElement.style.borderBottomColor = 'red';
       listingCarModelElement.style.borderBottom = '3px solid red'
     }
+
+    /////
 
     if(Validation.listingValidations.listingEngineDisplacementValidation.test(this.car.engineDisplacement)){
       engineDisplacementCheck = true;
@@ -150,6 +164,8 @@ export class AddListingComponent {
       listingEngineDisplacementElement.style.borderBottom = '3px solid red'
     }
 
+    /////
+
     if(Validation.listingValidations.listingLocationValidation.test(this.car.location)){
       locationCheck = true;
       listingLocationElement.style.borderBottomColor = 'green';
@@ -161,7 +177,20 @@ export class AddListingComponent {
       listingLocationElement.style.borderBottom = '3px solid red'
     }
 
-    if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && engineDisplacementCheck && locationCheck){
+    /////
+
+    if(Validation.listingValidations.carMakeModelColorValidation.test(this.car.color)){
+      colorCheck = true;
+      listingColorElement.style.borderBottomColor = 'green';
+      listingColorElement.style.borderBottom = '3px solid green'
+    }
+    else{
+      colorCheck = false;
+      listingColorElement.style.borderBottomColor = 'red';
+      listingColorElement.style.borderBottom = '3px solid red'
+    }
+
+    if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && engineDisplacementCheck && locationCheck && colorCheck){
       this.isInputValid = true;
     }
   }

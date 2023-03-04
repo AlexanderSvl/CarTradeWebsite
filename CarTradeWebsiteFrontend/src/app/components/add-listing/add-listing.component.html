@@ -12,7 +12,7 @@
 
         <div id="carInfo">
             <div class="fl">
-                <label for="userName"><b>Car Make</b></label>
+                <label for="carMake"><b>Car Make</b></label>
                 <input type="text" placeholder="Honda, Toyota, BMW..." name="carMake" id="carMake" required [(ngModel)]="car.carMake">
             </div>
             &nbsp;
@@ -20,15 +20,15 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Car Model</b></label>
+                <label for="carModel"><b>Car Model</b></label>
                 <input type="text" placeholder="Prelude, Avensis, 320d..." name="carModel" id="carModel" required [(ngModel)]="car.carModel">
             </div>
         </div>
 
         <div id="carInfo">
             <div class="fl">
-                <label for="userName"><b>Transmission Type</b></label>
-                <select type="text" placeholder="Enter transmission type" name="fuel" id="fuel" required [(ngModel)]="car.transmissionType">
+                <label for="transmissionType"><b>Transmission Type</b></label>
+                <select type="text" placeholder="Enter transmission type" name="transmissionType" id="transmissionType" required [(ngModel)]="car.transmissionType">
                     <option value="" selected disabled hidden>Select</option>
                     <option value="Manual">Manual</option>
                     <option value="Automatic">Automatic</option>
@@ -40,12 +40,12 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Fuel Type</b></label>
+                <label for="fuel"><b>Fuel Type</b></label>
                 <select type="text" placeholder="Enter fuel type" name="fuel" id="fuel" required [(ngModel)]="car.fuelType">
                     <option value="" selected disabled hidden>Select</option>
-                    <option value="gasoline">Gasoline</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="methane">Methane</option>
+                    <option value="Gasoline">Gasoline</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Methane">Methane</option>
                     <option value="LPG">LPG</option>
                 </select>
             </div>
@@ -54,7 +54,7 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Engine displacement</b></label>
+                <label for="engineDisplacement"><b>Engine displacement</b></label>
                 <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required [(ngModel)]="car.engineDisplacement">
             </div>
             &nbsp;
@@ -62,22 +62,22 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Color</b></label>
+                <label for="color"><b>Color</b></label>
                 <input type="text" placeholder="brown, red, gray" name="color" id="color" required [(ngModel)]="car.color">
             </div>
         </div>
 
         <div id="carInfo">
             <div class="fl">
-                <label for="userName"><b>Year of production</b></label>
-                <input type="text" placeholder="2001..." name="year" id="year" required [(ngModel)]="car.yearOfProduction">
+                <label for="yearOfProduction"><b>Year of production</b></label>
+                <input type="text" placeholder="2001..." name="year" id="yearOfProduction" required [(ngModel)]="car.yearOfProduction">
             </div>
             &nbsp;
             &nbsp;
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="userName"><b>Mileage</b></label>
+                <label for="mileage"><b>Mileage</b></label>
                 <input type="text" placeholder="60340..." name="mileage" id="mileage" required [(ngModel)]="car.mileage">
             </div>
             &nbsp;
@@ -85,27 +85,27 @@
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Engine Layout</b></label>
-                <input type="text" placeholder="I4, V6..." name="email" id="email" required [(ngModel)]="car.engineLayout">
+                <label for="engineLayout"><b>Engine Layout</b></label>
+                <input type="text" placeholder="I4, V6..." name="email" id="engineLayout" required [(ngModel)]="car.engineLayout">
             </div>
             &nbsp;
             &nbsp;
             &nbsp;
             &nbsp;
             <div class="fl">
-                <label for="email"><b>Location</b></label>
+                <label for="location"><b>Location</b></label>
                 <input type="text" placeholder="Sofia, London, Paris..." name="email" id="location" required [(ngModel)]="car.location">
             </div>
         </div>
 
-        <label for="psw"><b>Options (separated by spaces and/or commas)</b></label>
+        <label for="options"><b>Options (separated by spaces and/or commas)</b></label>
         <input type="text" placeholder="ABS, Stereo, Sunroof... " name="password" id="password" autocomplete="on" required id="options">
 
-        <label for="psw"><b>Images's .jpg web address (DEV) (separated by spaces and/or commas)</b></label>
-        <input id="images" type="text" placeholder="https://yourphotowebsite.com/car.jpg, https://yourphotowebsite.com/car.jpg2... " name="password" autocomplete="on" required>
+        <label for="images"><b>Images's .jpg web address (DEV) (separated by spaces and/or commas)</b></label>
+        <input id="images" type="text" placeholder="https://yourphotowebsite.com/car.jpg, https://yourphotowebsite.com/car.jpg2... " name="images" autocomplete="on" required>
 
-        <label for="psw-repeat"><b>Enter the car's price</b></label>
-        <input type="text" placeholder="45000, 5600, 100200..." name="password-repeat" id="password-repeat" autocomplete="on" [(ngModel)]="car.price">
+        <label for="price"><b>Enter the car's price</b></label>
+        <input type="text" placeholder="45000, 5600, 100200..." name="price" id="price" autocomplete="on" [(ngModel)]="car.price">
         <hr>
 
         <button type="submit" class="registerbtn">Publish your listing</button>

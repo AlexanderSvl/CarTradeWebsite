@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
 
     if(this.isInputValid){
       this.registerModel.dateOfCreation = new Date();
-      //console.log(JSON.stringify(this.registerModel));
       this.register(this.registerModel);
     }
     else{

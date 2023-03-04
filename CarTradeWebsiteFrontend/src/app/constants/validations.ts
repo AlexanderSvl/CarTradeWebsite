@@ -8,8 +8,9 @@ export const Validation = {
     listingValidations: {
         listingTitleValidation: /^[A-Za-z._-\d ].{10,50}$/,
         listingDescriptionValidation: /^[A-Za-z._-\d ].{40,200}$/,
-        carMakeModelValidation: /^[A-Za-z._-\d ].{0,15}$/,
+        carMakeModelColorValidation: /^[A-Za-z._-\d ].{1,15}$/,
         listingLocationValidation: /^[A-Za-z].{1,20}$/,
-        listingEngineDisplacementValidation: /^\d{1}.\d{1}$/
+        listingEngineDisplacementValidation: /^\d{1}.\d{1}$/,
+        listingEngineLayoutValidation: /^[A-Z]{1}\d{1}$/
     }
 }

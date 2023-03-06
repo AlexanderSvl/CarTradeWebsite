@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarModel } from 'src/app/models/carModel';
 import { ImageModel } from 'src/app/models/imageModel';
 import { OptionModel } from 'src/app/models/optionModel';
@@ -11,7 +11,8 @@ import { Validation } from 'src/app/constants/validations';
   templateUrl: './add-listing.component.html',
   styleUrls: ['./add-listing.component.scss']
 })
-export class AddListingComponent {
+export class AddListingComponent{
+
   images: ImageModel[] = [];
   options: OptionModel[] = [];
   car = new CarModel("", this.images, "", "", "", "", "", null, null, "", "", "", "", "", null, this.options, new Date);
@@ -24,7 +25,8 @@ export class AddListingComponent {
     this.car.dateOfCreation = new Date;
     this.car.coverImageURL = this.images.find(x=>x!==undefined).URL;
     
-    if(this.isInputValid){
+
+    if(this.checkValidation()){
       this.createPost();
     }
     else {
@@ -83,7 +85,7 @@ export class AddListingComponent {
     });
   }
 
-  checkValidation(){
+  checkValidation(): boolean{
     let listingTitleElement = document.getElementById('title') as HTMLElement;
     let listingDescriptionElement = document.getElementById('description') as HTMLElement;
     let listingCarMakeElement = document.getElementById('carMake') as HTMLElement;
@@ -206,6 +208,9 @@ export class AddListingComponent {
 
     if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && engineDisplacementCheck && locationCheck && colorCheck){
       this.isInputValid = true;
+      return true;
     }
+
+    return false;
   }
 }

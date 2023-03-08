@@ -16,7 +16,6 @@ export class AddListingComponent{
   images: ImageModel[] = [];
   options: OptionModel[] = [];
   car = new CarModel("", this.images, "", "", "", "", "", null, null, "", "", "", "", "", null, this.options, new Date);
-  isInputValid = false;
 
   constructor(private postService: CarPostService, private router: Router){}
 
@@ -25,7 +24,6 @@ export class AddListingComponent{
     this.car.dateOfCreation = new Date;
     this.car.coverImageURL = this.images.find(x=>x!==undefined).URL;
     
-
     if(this.checkValidation()){
       this.createPost();
     }
@@ -76,7 +74,7 @@ export class AddListingComponent{
       })
     });
 
-    let optionsArr = currentOptions.split(/[\s,]+/);
+    let optionsArr = currentOptions.split(", ");
     
     optionsArr.forEach(element => {
       this.options.push({
@@ -94,6 +92,11 @@ export class AddListingComponent{
     let listingLocationElement = document.getElementById('location') as HTMLElement;
     let listingColorElement = document.getElementById('color') as HTMLElement;
     let listingEngineLayoutElement = document.getElementById('engineLayout') as HTMLElement;
+    let listingTransmissionTypeElement = document.getElementById('transmissionType') as HTMLSelectElement;
+    let listingFuelElement = document.getElementById('fuel') as HTMLSelectElement;
+    let listingYearOfProductionElement = document.getElementById('yearOfProduction') as HTMLInputElement;
+    let listingMileageElement = document.getElementById('mileage') as HTMLInputElement;
+    let listingPriceElement = document.getElementById('price') as HTMLInputElement;
 
     let titleCheck = false;
     let descriptionCheck = false;
@@ -103,6 +106,33 @@ export class AddListingComponent{
     let locationCheck = false;
     let colorCheck = false;
     let engineLayoutCheck = false;
+    let transmissionTypeCheck = false;
+    let fuelCheck = false;
+    let yearOfProductionCheck = false;
+    let mileageCheck = false;
+    let priceCheck = false;
+    
+    if(listingFuelElement.value == ""){
+      fuelCheck = false;
+      listingFuelElement.style.borderBottomColor = 'red';
+      listingFuelElement.style.borderBottom = '3px solid red'
+    }
+    else {
+      fuelCheck = true;
+      listingFuelElement.style.borderBottomColor = 'green';
+      listingFuelElement.style.borderBottom = '3px solid green'
+    }
+
+    if(listingTransmissionTypeElement.value == ""){
+      transmissionTypeCheck = false;
+      listingTransmissionTypeElement.style.borderBottomColor = 'red';
+      listingTransmissionTypeElement.style.borderBottom = '3px solid red'
+    }
+    else {
+      transmissionTypeCheck = true;
+      listingTransmissionTypeElement.style.borderBottomColor = 'green';
+      listingTransmissionTypeElement.style.borderBottom = '3px solid green'
+    }
 
     if(Validation.listingValidations.listingTitleValidation.test(this.car.title)){
       titleCheck = true;
@@ -200,14 +230,70 @@ export class AddListingComponent{
       listingEngineLayoutElement.style.borderBottomColor = 'green';
       listingEngineLayoutElement.style.borderBottom = '3px solid green'
     }
-    else{
+    else {
       engineLayoutCheck = false;
       listingEngineLayoutElement.style.borderBottomColor = 'red';
       listingEngineLayoutElement.style.borderBottom = '3px solid red'
     }
 
-    if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && engineDisplacementCheck && locationCheck && colorCheck){
-      this.isInputValid = true;
+    ///////
+
+    if(this.car.yearOfProduction == null){
+      yearOfProductionCheck = false;
+      listingYearOfProductionElement.style.borderBottomColor = 'red';
+      listingYearOfProductionElement.style.borderBottom = '3px solid red'
+    }
+    else if(Validation.listingValidations.listingYearOfProductionValidation.test(this.car.yearOfProduction.toString())){
+      yearOfProductionCheck = true;
+      listingYearOfProductionElement.style.borderBottomColor = 'green';
+      listingYearOfProductionElement.style.borderBottom = '3px solid green'
+    }
+    else {
+      yearOfProductionCheck = false;
+      listingYearOfProductionElement.style.borderBottomColor = 'red';
+      listingYearOfProductionElement.style.borderBottom = '3px solid red'
+    }
+
+    ///////
+
+    if(this.car.mileage == null){
+      mileageCheck = false;
+      listingMileageElement.style.borderBottomColor = 'red';
+      listingMileageElement.style.borderBottom = '3px solid red'
+    }
+    else if(Validation.listingValidations.listingMileagePriceValidation.test(this.car.mileage.toString())){
+      mileageCheck = true;
+      listingMileageElement.style.borderBottomColor = 'green';
+      listingMileageElement.style.borderBottom = '3px solid green'
+    }
+    else {
+      mileageCheck = false;
+      listingMileageElement.style.borderBottomColor = 'red';
+      listingMileageElement.style.borderBottom = '3px solid red'
+    }
+
+    ///////
+
+    if(this.car.price == null){
+      priceCheck = false;
+      listingPriceElement.style.borderBottomColor = 'red';
+      listingPriceElement.style.borderBottom = '3px solid red'
+    }
+    else if(Validation.listingValidations.listingMileagePriceValidation.test(this.car.price.toString())){
+      priceCheck = true;
+      listingPriceElement.style.borderBottomColor = 'green';
+      listingPriceElement.style.borderBottom = '3px solid green'
+    }
+    else {
+      priceCheck = false;
+      listingPriceElement.style.borderBottomColor = 'red';
+      listingPriceElement.style.borderBottom = '3px solid red'
+    }
+
+    if(titleCheck && descriptionCheck && carMakeCheck && carModelCheck && 
+      engineDisplacementCheck && locationCheck && colorCheck &&
+      engineLayoutCheck && fuelCheck && transmissionTypeCheck &&
+      yearOfProductionCheck && mileageCheck && priceCheck){
       return true;
     }
 

@@ -1,37 +1,112 @@
 <section class="searchBox">
   <form (ngSubmit)="onSubmit()">
-    <label for="search" id="searchLabel">Search</label>
-    <input type="text" id="searchBox" name="search" [(ngModel)]="searchTerms">
-
-    <a id="searchByLabel">Search by:</a>
-
-    <select #options id="seacrhDropdownBox" (change)="onSelect(options.value)">
-      <option>Title</option>
-      <option>Description</option>
-      <option>Car Make</option>
-      <option>Car Model</option>
-      <option>Engine Displacement</option>
-      <option>Transmission Type</option>
-      <option></option>
-    </select>
-
-    <a id="year">Year:</a>
-
-    <input type="text" placeholder="From..." class="inputYear" name="startYear" [(ngModel)]="startYear" [width]="23">
-    <input type="text" placeholder="To..." class="inputYear" name="endYear" [(ngModel)]="endYear">
-
-    <br>
-    <a id="searchByLabel">Fuel Type (leave blank for Electric)</a>
-
-    <select #options id="seacrhDropdownBox" (change)="onSelect(options.value)">
-      <option default></option>
-      <option>Gasoline</option>
-      <option>Diesel</option>
-      <option>LPG</option>
-      <option>Methane</option>
-      <option>Electric</option>
-    </select>
-
-    <button type="submit" class="searchbtn">Search</button>
+    <div class="container">
+      <h1>Search for a car</h1>
+      <p>Please fill in the requirements for your car.</p>
+      <hr>
+      <br>
+      <div id="carInfo">
+        <div class="fl">
+          <label for="title"><b>Title keywords:</b></label>
+          <input type="text" placeholder="Selling a 1978 Honda..." name="title" id="title" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="description"><b>Description keywords:</b></label>
+          <input type="text" placeholder="The car is in great condition..." name="description" id="description" required>
+        </div>
+      </div>
+      <div id="carInfo">
+        <div class="fl">
+          <label for="carMake"><b>Car Make</b></label>
+          <input type="text" placeholder="Honda, Toyota, BMW..." name="carMake" id="carMake" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="carModel"><b>Car Model</b></label>
+          <input type="text" placeholder="Prelude, Avensis, 320d..." name="carModel" id="carModel" required>
+        </div>
+      </div>
+      <div id="carInfo">
+        <div class="fl">
+          <label for="transmissionType"><b>Transmission Type</b></label>
+          <select type="text" placeholder="Enter transmission type" name="transmissionType" id="transmissionType"
+            required>
+            <option value="" selected disabled hidden>Select</option>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+            <option value="CVT">CVT</option>
+          </select>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="fuel"><b>Fuel Type</b></label>
+          <select type="text" placeholder="Enter fuel type" name="fuel" id="fuel" required>
+            <option value="" selected disabled hidden>Select</option>
+            <option value="Gasoline">Gasoline</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Methane">Methane</option>
+            <option value="LPG">LPG</option>
+          </select>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="engineDisplacement"><b>Engine displacement</b></label>
+          <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="color"><b>Color</b></label>
+          <input type="text" placeholder="brown, red, gray" name="color" id="color" required>
+        </div>
+      </div>
+      <div id="carInfo">
+        <div class="fl">
+          <label for="yearOfProduction"><b>Year of production</b></label>
+          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="mileage"><b>Mileage</b></label>
+          <input type="text" placeholder="60340..." name="mileage" id="mileage" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="engineLayout"><b>Engine Layout</b></label>
+          <input type="text" placeholder="I4, V6..." name="email" id="engineLayout" required>
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="location"><b>Location</b></label>
+          <input type="text" placeholder="Sofia, London, Paris..." name="email" id="location" required>
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="registerbtn">Search</button>
+    </div>
   </form>
 </section>

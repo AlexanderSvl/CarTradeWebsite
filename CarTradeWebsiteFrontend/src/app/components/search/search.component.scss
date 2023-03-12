@@ -1,49 +1,104 @@
-* {font-family:'Montserrat'}
+* {
+  font-family: "Montserrat";
+}
 
 .searchBox {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .searchbtn {
+    background-color: #ff7b00;
+    color: white;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  .searchbtn:hover {
+    opacity: 1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+* {
+  font-family: "Montserrat";
+}
+
+.container {
+  margin-top: 3rem;
+  padding: 16px;
+  width: 90%;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 5rem;
+}
+
+#carInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .fl {
+    width: 50%;
+  }
+
+  input[type="text"] {
+    display: block;
     width: 100%;
-    height: 10rem;
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
 
-    #searchLabel, #searchByLabel {
-        font-family:'Montserrat'; 
-        font-size: 22px;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+  label {
+    display: block;
+  }
+}
 
-    #searchBox, #seacrhDropdownBox, .inputYear {
-        padding: 0.2rem;
-        border-radius: 0.3rem;
-        border: 0.1rem solid black;
-        margin-right: 1rem;
-    }
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
 
-    .inputYear {
-        margin-left: 0.5rem;
-    }
+.registerbtn {
+  background-color: #ff7b00;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 
-    #year {
-        margin-left: 2rem;
-        margin-right: 1rem;
-        font-family:'Montserrat'; 
-        font-size: 22px;
-    }
+.registerbtn:hover {
+  opacity: 1;
+}
 
-    .searchbtn {
-        background-color: #ff7b00;
-        color: white;
-        padding: 0.5rem 2rem;
-        border: none;
-        border-radius: 0.3rem;
-        cursor: pointer;
-        opacity: 0.9;
-    }
+a {
+  color: dodgerblue;
+}
 
-    .searchbtn:hover {
-        opacity:1;
-    }
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+  margin-bottom: 4rem;
 }

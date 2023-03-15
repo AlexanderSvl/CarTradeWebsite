@@ -8,7 +8,7 @@
       <div id="carInfo">
         <div class="fl">
           <label for="title"><b>Title keywords:</b></label>
-          <input type="text" placeholder="Selling a 1978 Honda..." name="title" id="title" required>
+          <input type="text" placeholder="Selling a 1978 Honda..." name="title" id="title" required [(ngModel)]="searchParameters.titleKeywords">
         </div>
         &nbsp;
         &nbsp;
@@ -16,13 +16,13 @@
         &nbsp;
         <div class="fl">
           <label for="description"><b>Description keywords:</b></label>
-          <input type="text" placeholder="The car is in great condition..." name="description" id="description" required>
+          <input type="text" placeholder="The car is in great condition..." name="description" id="description" required [(ngModel)]="searchParameters.descriptionKeywords">
         </div>
       </div>
       <div id="carInfo">
         <div class="fl">
           <label for="carMake"><b>Car Make</b></label>
-          <input type="text" placeholder="Honda, Toyota, BMW..." name="carMake" id="carMake" required>
+          <input type="text" placeholder="Honda, Toyota, BMW..." name="carMake" id="carMake" required [(ngModel)]="searchParameters.carMake">
         </div>
         &nbsp;
         &nbsp;
@@ -30,14 +30,14 @@
         &nbsp;
         <div class="fl">
           <label for="carModel"><b>Car Model</b></label>
-          <input type="text" placeholder="Prelude, Avensis, 320d..." name="carModel" id="carModel" required>
+          <input type="text" placeholder="Prelude, Avensis, 320d..." name="carModel" id="carModel" required [(ngModel)]="searchParameters.carModel">
         </div>
       </div>
       <div id="carInfo">
         <div class="fl">
           <label for="transmissionType"><b>Transmission Type</b></label>
           <select type="text" placeholder="Enter transmission type" name="transmissionType" id="transmissionType"
-            required>
+            required [(ngModel)]="searchParameters.transmissionType">
             <option value="" selected disabled hidden>Select</option>
             <option value="Manual">Manual</option>
             <option value="Automatic">Automatic</option>
@@ -50,7 +50,7 @@
         &nbsp;
         <div class="fl">
           <label for="fuel"><b>Fuel Type</b></label>
-          <select type="text" placeholder="Enter fuel type" name="fuel" id="fuel" required>
+          <select type="text" placeholder="Enter fuel type" name="fuel" id="fuel" required [(ngModel)]="searchParameters.fuelType">
             <option value="" selected disabled hidden>Select</option>
             <option value="Gasoline">Gasoline</option>
             <option value="Diesel">Diesel</option>
@@ -64,7 +64,7 @@
         &nbsp;
         <div class="fl">
           <label for="engineDisplacement"><b>Engine displacement</b></label>
-          <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required>
+          <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required [(ngModel)]="searchParameters.engineDisplacement">
         </div>
         &nbsp;
         &nbsp;
@@ -72,13 +72,13 @@
         &nbsp;
         <div class="fl">
           <label for="color"><b>Color</b></label>
-          <input type="text" placeholder="brown, red, gray" name="color" id="color" required>
+          <input type="text" placeholder="brown, red, gray" name="color" id="color" required [(ngModel)]="searchParameters.color">
         </div>
       </div>
       <div id="carInfo">
         <div class="fl">
           <label for="yearOfProduction"><b>Year of production</b></label>
-          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required>
+          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.yearOfProduction">
         </div>
         &nbsp;
         &nbsp;
@@ -86,7 +86,7 @@
         &nbsp;
         <div class="fl">
           <label for="mileage"><b>Mileage</b></label>
-          <input type="text" placeholder="60340..." name="mileage" id="mileage" required>
+          <input type="text" placeholder="60340..." name="mileage" id="mileage" required [(ngModel)]="searchParameters.mileage">
         </div>
         &nbsp;
         &nbsp;
@@ -94,7 +94,7 @@
         &nbsp;
         <div class="fl">
           <label for="engineLayout"><b>Engine Layout</b></label>
-          <input type="text" placeholder="I4, V6..." name="email" id="engineLayout" required>
+          <input type="text" placeholder="I4, V6..." name="email" id="engineLayout" required [(ngModel)]="searchParameters.engineLayout">
         </div>
         &nbsp;
         &nbsp;
@@ -102,7 +102,7 @@
         &nbsp;
         <div class="fl">
           <label for="location"><b>Location</b></label>
-          <input type="text" placeholder="Sofia, London, Paris..." name="email" id="location" required>
+          <input type="text" placeholder="Sofia, London, Paris..." name="email" id="location" required [(ngModel)]="searchParameters.location">
         </div>
       </div>
       <br>

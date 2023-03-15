@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SearchService } from 'src/app/services/SearchService';
 import { CarResponseModel } from 'src/app/models/carResponseModel';
+import { CarModel } from 'src/app/models/carModel';
+import { SearchModel } from 'src/app/models/searchModel';
 
 @Component({
   selector: 'app-search',
@@ -10,6 +12,7 @@ import { CarResponseModel } from 'src/app/models/carResponseModel';
 })
 export class SearchComponent {
   cars: CarResponseModel[] = [];
+  searchParameters = new SearchModel("", "", "", "", "", 1, 1, "", "", "", "", "",);
 
   constructor(private http: HttpClient, public searchService: SearchService) {}
 
@@ -17,6 +20,6 @@ export class SearchComponent {
   }
 
   onSubmit(){
-    
+    console.log(this.searchParameters);
   }
 }

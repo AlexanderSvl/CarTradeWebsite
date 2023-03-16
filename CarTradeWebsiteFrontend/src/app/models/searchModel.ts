@@ -1,6 +1,7 @@
 export class SearchModel {
     constructor(
     public titleKeywords: string,
+    public descriptionKeywords: string,
     public carMake: string,
     public carModel: string,
     public fuelType: string,
@@ -10,7 +11,6 @@ export class SearchModel {
     public color: string,
     public engineDisplacement: string,
     public transmissionType: string,
-    public descriptionKeywords: string,
     public location: string,
 ){}
 }

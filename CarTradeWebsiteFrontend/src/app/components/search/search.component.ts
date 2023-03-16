@@ -12,12 +12,9 @@ import { SearchModel } from 'src/app/models/searchModel';
 })
 export class SearchComponent {
   cars: CarResponseModel[] = [];
-  searchParameters = new SearchModel("", "", "", "", "", 1, 1, "", "", "", "", "",);
+  searchParameters = new SearchModel("", "", "", "", "", "", null, null, "", "", "", "",);
 
   constructor(private http: HttpClient, public searchService: SearchService) {}
-
-  onSelect(value: string){
-  }
 
   onSubmit(){
     console.log(this.searchParameters);

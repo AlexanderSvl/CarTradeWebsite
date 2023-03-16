@@ -9,6 +9,16 @@ namespace CarTradeWebsite.DataAccess.Repositories
     {
         private static DatabaseContext context = new DatabaseContext();
 
+        public async Task<IEnumerable<PostModel>> SearchPosts(string titleKeywords, 
+            string descriptionKeywords, string carMake, string carModel, string fuelType, 
+            string engineLayout, int mileage, int yearOfProduction, string color, string engineDisplacement, 
+            string transmissionType, string location)
+        {
+            IEnumerable<PostModel> posts = new List<PostModel>();
+
+            return posts;
+        }
+
         public async Task<IEnumerable<PostModel>> SearchTitle(string titleKeywords)
         {
             return await context.Posts

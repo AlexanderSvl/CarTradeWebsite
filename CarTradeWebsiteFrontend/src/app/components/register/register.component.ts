@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { UserRegisterModel } from 'src/app/models/userRegisterModel';
 import { environment } from '../../constants/enviroment'
 import { Validation } from '../../constants/validations'
+import { LoginComponent } from '../login/login.component';
+import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
+import { UserLoginModel } from 'src/app/models/userLoginModel';
+import { AuthenticationService } from 'src/app/services/AuthenticationService';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +25,7 @@ export class RegisterComponent implements OnInit {
   passwordMatch = false;
   errorMessage = "";
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService) {}
 
   onSubmit() {
     this.checkValidation();
@@ -139,11 +143,27 @@ export class RegisterComponent implements OnInit {
     {headers:{'Content-Type':'application/json'}})
     .subscribe((result: any) => {
       alert("Success!");
+      let data = {
+        email: this.registerModel.email,
+        password: this.registerModel.password
+      }
+      this.authenticationService.login(data).subscribe(x => {
+        this.authenticationService.storeToken(x.token);
+        NavigationBarComponent.isAuthorized = true;
+        console.log("here")
+        this.router.navigate(['home'])
+      }, err => {
+        alert("Incorrect email or password.")
+      }); 
     }, (error: any) => {
       if(error.statusCode == "400"){
         alert("Error: Bad request.")
       }
+      else{
+        alert("Error: Try again later.")
+      }
     });
+
   }
 }
 

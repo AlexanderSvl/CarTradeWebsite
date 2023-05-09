@@ -1,9 +1,11 @@
 ﻿using CarTradeWebsite.Models;
+using CarTradeWebsite.Models.Search;
 
 namespace CarTradeWebsite.DataAccess.Repositories.Interfaces
 {
     public interface ISearchRepository
     {
+        public IEnumerable<PostModel> Search(SearchParameters searchParameters);
         public Task<IEnumerable<PostModel>> SearchTitle(string title);
         public Task<IEnumerable<PostModel>> SearchDescription(string description);
         public Task<IEnumerable<PostModel>> SearchCarMake(string carMake);

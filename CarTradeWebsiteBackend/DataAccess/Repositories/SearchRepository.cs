@@ -1,7 +1,9 @@
 ﻿using CarTradeWebsite.Context;
 using CarTradeWebsite.DataAccess.Repositories.Interfaces;
 using CarTradeWebsite.Models;
+using CarTradeWebsite.Models.Search;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CarTradeWebsite.DataAccess.Repositories
 {
@@ -9,14 +11,16 @@ namespace CarTradeWebsite.DataAccess.Repositories
     {
         private static DatabaseContext context = new DatabaseContext();
 
-        public async Task<IEnumerable<PostModel>> SearchPosts(string titleKeywords, 
-            string descriptionKeywords, string carMake, string carModel, string fuelType, 
-            string engineLayout, int mileage, int yearOfProduction, string color, string engineDisplacement, 
-            string transmissionType, string location)
+        public IEnumerable<PostModel> Search(SearchParameters searchParameters)
         {
-            IEnumerable<PostModel> posts = new List<PostModel>();
+            IEnumerable<PostModel> postsToReturn = Enumerable.Empty<PostModel>();
 
-            return posts;
+            if(searchParameters.Title != null)
+            {
+
+            }
+
+            return postsToReturn.ToList();
         }
 
         public async Task<IEnumerable<PostModel>> SearchTitle(string titleKeywords)

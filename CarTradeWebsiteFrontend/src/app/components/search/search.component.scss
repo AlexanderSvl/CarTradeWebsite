@@ -59,6 +59,10 @@ textarea {
 
   .fl {
     width: 50%;
+    
+    input {
+      display: inline-block;
+    }
   }
 
   input[type="text"] {

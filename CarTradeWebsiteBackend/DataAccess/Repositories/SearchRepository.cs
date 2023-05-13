@@ -21,14 +21,14 @@ namespace CarTradeWebsite.DataAccess.Repositories
                 return Enumerable.Empty<PostModel>();
             }
 
-            if (!string.IsNullOrEmpty(searchParameters.Title))
+            if (!string.IsNullOrEmpty(searchParameters.TitleKeywords))
             {
-                query = query.Where(post => post.Title.Contains(searchParameters.Title));
+                query = query.Where(post => post.Title.Contains(searchParameters.TitleKeywords));
             }
 
-            if (!string.IsNullOrEmpty(searchParameters.Description))
+            if (!string.IsNullOrEmpty(searchParameters.DescriptionKeywords))
             {
-                query = query.Where(post => post.Description.Contains(searchParameters.Description));
+                query = query.Where(post => post.Description.Contains(searchParameters.DescriptionKeywords));
             }
 
             if (!string.IsNullOrEmpty(searchParameters.CarMake))
@@ -225,9 +225,8 @@ namespace CarTradeWebsite.DataAccess.Repositories
                         nullPropertiesCounter++;
                     }
                 }
-            }
 
-            Console.WriteLine(nullPropertiesCounter);
+            }
 
             if (nullPropertiesCounter == searchParameters.GetType().GetProperties().Length)
             {

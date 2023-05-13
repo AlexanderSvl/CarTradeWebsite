@@ -15,7 +15,7 @@ namespace CarTradeWebsite.API.Controllers
             this._searchRepository = searchRepository;
         }
 
-        [HttpGet("fffff")]
+        [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<PostModel>>> Search(SearchParameters searchParameters)
         {
             IEnumerable<PostModel> posts = await this._searchRepository.SearchPosts(searchParameters);

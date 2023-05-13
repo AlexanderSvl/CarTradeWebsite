@@ -54,7 +54,7 @@
             <option value="" selected disabled hidden>Select</option>
             <option value="Gasoline">Gasoline</option>
             <option value="Diesel">Diesel</option>
-            <option value="Methane">Methane</option>
+            <option value="Methane">CNG</option>
             <option value="LPG">LPG</option>
           </select>
         </div>
@@ -66,35 +66,19 @@
           <label for="engineDisplacement"><b>Engine displacement</b></label>
           <input type="text" placeholder="1.6, 3.0, 5.3..." name="engineDisplacement" id="engineDisplacement" required [(ngModel)]="searchParameters.engineDisplacement">
         </div>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
+      </div>
+      <div id="carInfo">
         <div class="fl">
           <label for="color"><b>Color</b></label>
           <input type="text" placeholder="brown, red, gray" name="color" id="color" required [(ngModel)]="searchParameters.color">
         </div>
-      </div>
-      <div id="carInfo">
-        <div class="fl">
-          <label for="yearOfProduction"><b>Year of production</b></label>
-          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.yearOfProduction">
-        </div>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
         <div class="fl">
-          <label for="mileage"><b>Mileage</b></label>
-          <input type="text" placeholder="60340..." name="mileage" id="mileage" required [(ngModel)]="searchParameters.mileage">
-        </div>
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <div class="fl">
-          <label for="engineLayout"><b>Engine Layout</b></label>
-          <input type="text" placeholder="I4, V6..." name="email" id="engineLayout" required [(ngModel)]="searchParameters.engineLayout">
+          <label for="engineLayout"><b>Engine layout</b></label>
+          <input type="text" placeholder="V8...." name="engineLayout" id="engineLayout" required [(ngModel)]="searchParameters.engineLayout">
         </div>
         &nbsp;
         &nbsp;
@@ -102,10 +86,45 @@
         &nbsp;
         <div class="fl">
           <label for="location"><b>Location</b></label>
-          <input type="text" placeholder="Sofia, London, Paris..." name="email" id="location" required [(ngModel)]="searchParameters.location">
+          <input type="text" placeholder="England...." name="location" id="location" required [(ngModel)]="searchParameters.location">
         </div>
       </div>
-      <br>
+      <div id="carInfo">
+        <div class="fl">
+          <label for="yearOfProduction"><b>Starting mileage</b></label>
+          <input type="text" placeholder="25 000..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.startMileage">
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="yearOfProduction"><b>Ending mileage</b></label>
+          <input type="text" placeholder="300 000..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.endMileage">
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="yearOfProduction"><b>Starting year of production</b></label>
+          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.startYearOfProduction">
+        </div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <div class="fl">
+          <label for="yearOfProduction"><b>Ending year of production</b></label>
+          <input type="text" placeholder="2001..." name="yearOfProduction" id="yearOfProduction" required [(ngModel)]="searchParameters.endYearOfProduction">
+        </div>
+      </div>
+      <div id="carInfo">
+        <div class="fl" style="width: 100%;">
+          <label for="options"><b>Options (separated by commas)</b></label>
+          <input type="text" placeholder="Autopilot, Sunroof" name="options" id="options" required [(ngModel)]="options">
+        </div>
+      </div>
       <button type="submit" class="registerbtn">Search</button>
     </div>
   </form>

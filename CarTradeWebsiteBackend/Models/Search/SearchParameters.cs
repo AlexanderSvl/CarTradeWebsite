@@ -4,8 +4,8 @@ namespace CarTradeWebsite.Models.Search
 {
     public class SearchParameters
     {
-        public string? Title { get; set; }
-        public string? Description { get; set; }
+        public string? TitleKeywords { get; set; }
+        public string? DescriptionKeywords { get; set; }
         public string? CarMake { get; set; }
         public string? CarModel { get; set; }
         public string? TransmissionType { get; set; }

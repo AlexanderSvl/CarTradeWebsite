@@ -8,6 +8,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AddListingComponent } from './components/add-listing/add-listing.component';
 import { AuthenticationGuard } from './guards/authenticationGuard';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard]},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'posts/:ID', component: DetailsComponent, canActivate: [AuthenticationGuard]},
   { path: '', component: LandingPageComponent },
   { path: 'new-listing', component: AddListingComponent, canActivate: [AuthenticationGuard]},
+  { path: 'searchResults', component: SearchResultsComponent, canActivate: [AuthenticationGuard]},
   { path: '**', redirectTo: ""}
 ];
 

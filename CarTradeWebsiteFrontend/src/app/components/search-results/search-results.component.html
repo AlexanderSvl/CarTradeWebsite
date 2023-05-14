@@ -1,0 +1,31 @@
+<br>
+<br>
+<div class="container">
+  <h1 style="text-align: center;">Search results</h1>
+  <p style="text-align: center;">These are the cars that meet your requirements</p>
+  <hr>
+  <br>
+</div>
+<section *ngFor="let car of cars">
+  <div id="searchResults" routerLinkActive="border border-info rounded" routerLink="/posts/{{car.id}}">
+    <div class="post">
+      <div class="image">
+        <img [src]="car.coverImageURL">
+        <h1>${{numberWithCommas(car.price, ",")}}</h1>
+      </div>
+      <div class="info">
+        <h1 id="ok">{{car.title}}</h1>
+        <h2>{{car.carMake}} {{car.carModel}}</h2>
+        <br>
+        <h4>Mileage: {{numberWithCommas(car.mileage, " ")}}</h4>
+        <h4>Fuel: {{car.fuelType}}</h4>
+      </div>
+      <br>
+      <div class="description">
+        <h4>Description:</h4>
+        <p>"{{car.description}}"</p>
+      </div>
+    </div>
+  </div>
+  <br>
+</section>

@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { DetailsComponent } from './components/details/details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AddListingComponent } from './components/add-listing/add-listing.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddListingComponent } from './components/add-listing/add-listing.compon
     RegisterComponent,
     DetailsComponent,
     LandingPageComponent,
-    AddListingComponent
+    AddListingComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

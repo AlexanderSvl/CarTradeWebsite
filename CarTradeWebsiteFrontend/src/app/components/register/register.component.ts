@@ -8,6 +8,7 @@ import { LoginComponent } from '../login/login.component';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
 import { UserLoginModel } from 'src/app/models/userLoginModel';
 import { AuthenticationService } from 'src/app/services/AuthenticationService';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit {
   passwordMatch = false;
   errorMessage = "";
 
-  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService) {}
+  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService, private toast: NgToastService) {}
 
   onSubmit() {
     this.checkValidation();
@@ -35,7 +36,7 @@ export class RegisterComponent implements OnInit {
       this.register(this.registerModel);
     }
     else{
-      alert(this.errorMessage)
+      this.toast.error({detail:"ERROR",summary:'User information is not valid!',duration:4000, position: "tl"});
     }
   }
 
@@ -142,7 +143,7 @@ export class RegisterComponent implements OnInit {
     data, 
     {headers:{'Content-Type':'application/json'}})
     .subscribe((result: any) => {
-      alert("Success!");
+      this.toast.success({detail:"SUCCESS",summary:'Registration was successful!',duration:4000, position: "tl"});
       let data = {
         email: this.registerModel.email,
         password: this.registerModel.password
@@ -150,7 +151,6 @@ export class RegisterComponent implements OnInit {
       this.authenticationService.login(data).subscribe(x => {
         this.authenticationService.storeToken(x.token);
         NavigationBarComponent.isAuthorized = true;
-        console.log("here")
         this.router.navigate(['home'])
       }, err => {
         alert("Incorrect email or password.")

@@ -1,74 +1,102 @@
-
+html {
+  font-family: "Montserrat", sans-serif;
+}
 
 .post {
-    cursor: pointer;
-    width: 75%;
-    margin: auto;
-    background-color: white;
-    align-items: center;
-    border-radius: 0.5rem;
-    border: 0.2rem solid #ff7b00;
-    margin-bottom: 2rem;
-    display: flex;
-  
-    .image {
-      float: left;
-      width: 25%;
-      text-align: center;
-  
-      img {
-        margin: 2rem 3rem 0.5rem 3rem;
-        width: 90%;
-        height: 90%;
-        border: 0.2rem solid black;
-        border-radius: 0.6rem;
-      }
-  
-      h1 {
-        margin-left: 3rem;
-        margin-bottom: 1rem;
-      }
+  cursor: pointer;
+  width: 75%;
+  margin: auto;
+  background-color: white;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #ff7b00;
+  margin-bottom: 2rem;
+  display: flex;
+
+  .image {
+    float: left;
+    width: 25%;
+    text-align: center;
+
+    img {
+      margin: 2rem 3rem 2rem 3rem;
+      width: 90%;
+      height: 90%;
+      border: 0.2rem solid black;
+      border-radius: 0.6rem;
     }
-  
-    .info {
-      
-      margin: 0 auto;
-      width: 35%;
+
+    h1 {
       margin-left: 3rem;
-      padding: 2rem;
-  
-      h1 {
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-  
-      h2 {
-        font-weight: 100;
-      }
-  
-      h4 {
-        font-weight: 400;
-      }
-    }
-  
-    .description {
-      margin: 0 auto;
-      width: 25%;
-      text-align: justify;
-      margin-right: 5rem;
-  
-      p {
-        font-style: italic;
-        max-width: 90%;
-        margin-left: 2rem;
-      }
-  
-      h4 {
-        text-align: center;
-        margin-bottom: 1rem;
-      }
+      margin-bottom: 1rem;
     }
   }
-  
-  
+
+  .info {
+    margin: 0 auto;
+    width: 35%;
+    margin-left: 3rem;
+    padding: 2rem;
+
+    h1 {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    h2 {
+      font-weight: 100;
+    }
+
+    h4 {
+      font-weight: 400;
+    }
+  }
+
+  .description {
+    margin: 0 auto;
+    width: 25%;
+    text-align: justify;
+    margin-right: 5rem;
+
+    p {
+      font-style: italic;
+      max-width: 90%;
+      margin-left: 1rem;
+    }
+
+    h4 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+
+::ng-deep ul > li.current {
+  background-color: #ff7b00 !important;
+  border-color: #ff7b00 !important;
+} 
+
+.ipp{
+  margin-bottom: 3%;
+  text-align: center;
+
+  label {
+    margin-right: 1rem;
+  }
+
+  select {
+    width: 7rem;
+    padding: 5px 7px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+  }
+}

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CarTradeWebsite.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace CarTradeWebsite
 {

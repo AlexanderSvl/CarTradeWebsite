@@ -47,6 +47,7 @@ namespace CarTradeWebsite.Tests
             // Assert
             Assert.IsInstanceOf<OkObjectResult>(result.Result);
             var okResult = (OkObjectResult)result.Result;
+
             Assert.AreEqual(posts, okResult.Value);
         }
 

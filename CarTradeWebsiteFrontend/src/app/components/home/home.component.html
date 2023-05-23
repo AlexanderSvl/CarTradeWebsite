@@ -1,12 +1,22 @@
 <section class="headBox">
     <h2>Today's hot offers!</h2>
+    <br>
 </section>
 
-<section *ngFor="let car of cars">
+<div>
+    <label for="items">Items per page:</label>
+    <select type="text" placeholder="Items per page:" name="items" required [(ngModel)]="itemsPerPage" (change)='page = 1;'>
+        <option value=5 selected>5</option>
+        <option value=10>10</option>
+        <option value=15>15</option>
+        <option value=25>25</option>
+    </select>
+</div>
+
+<section *ngFor="let car of cars | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
     <div class="post" routerLinkActive="border border-info rounded" routerLink="/posts/{{car.id}}">
         <div class="image">
             <img [src]="car.coverImageURL">
-            <h1>${{numberWithCommas(car.price, ",")}}</h1>
         </div>
         <div class="info">
             <h1 id="ok">{{car.title}}</h1>
@@ -17,8 +27,17 @@
         </div>
         <br>
         <div class="description">
-            <h4>Description:</h4>
+            <h4><u>From the owner:</u></h4>
             <p>"{{car.description}}"</p>
+            <br>
+            <h1 style="text-align: center; font-style: italic;">Price: ${{numberWithCommas(car.price, ",")}}</h1>
         </div>
     </div>
 </section>
+
+<div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+
+<br>
+<br>

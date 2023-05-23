@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "4d2a0f5b-5b5a-49e5-9618-cd05102d5625": {
+      "ProjectGuid": "4d2a0f5b-5b5a-49e5-9618-cd05102d5625",
+      "DisplayName": "CarTradeWebsite.Tests",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

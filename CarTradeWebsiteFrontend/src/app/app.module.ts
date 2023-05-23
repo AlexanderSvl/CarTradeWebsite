@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,6 +14,10 @@ import { DetailsComponent } from './components/details/details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AddListingComponent } from './components/add-listing/add-listing.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NgToastModule } from 'ng-angular-popup'
 
 @NgModule({
   declarations: [
@@ -27,14 +30,18 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     DetailsComponent,
     LandingPageComponent,
     AddListingComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

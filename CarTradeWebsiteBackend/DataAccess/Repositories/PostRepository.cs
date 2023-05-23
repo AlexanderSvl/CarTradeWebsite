@@ -30,6 +30,18 @@ namespace CarTradeWebsite.DataAccess.Repositories
                 context.Posts.Remove(postToDelete);
                 await context.SaveChangesAsync();
 
+                foreach (var image in postToDelete.CarImages)
+                {
+                    context.Images.Remove(image);
+                    await context.SaveChangesAsync();
+                }
+
+                foreach (var option in postToDelete.Options)
+                {
+                    context.Options.Remove(option);
+                    await context.SaveChangesAsync();
+                }
+
                 return true;
             }
 

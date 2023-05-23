@@ -9,6 +9,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { AddListingComponent } from './components/add-listing/add-listing.component';
 import { AuthenticationGuard } from './guards/authenticationGuard';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthenticationGuard]},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'new-listing', component: AddListingComponent, canActivate: [AuthenticationGuard]},
   { path: 'searchResults', component: SearchResultsComponent, canActivate: [AuthenticationGuard]},
-  { path: '**', redirectTo: ""}
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

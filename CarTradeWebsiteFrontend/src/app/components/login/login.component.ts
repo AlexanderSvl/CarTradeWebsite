@@ -7,6 +7,7 @@ import { Validation } from '../../constants/validations'
 import { AuthenticationService } from 'src/app/services/AuthenticationService';
 import { json } from 'stream/consumers';
 import { NavigationBarComponent } from '../navigation-bar/navigation-bar.component';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   isInputValid = false;
   errorMessage = '';
 
-  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService){}
+  constructor(private http: HttpClient, private router: Router, private authenticationService: AuthenticationService, private toast: NgToastService){}
 
   onSubmit(){
     this.checkValidation();
@@ -27,7 +28,7 @@ export class LoginComponent {
       this.login(this.loginModel);
     }
     else{
-      alert(this.errorMessage);
+      this.toast.error({detail:"ERROR",summary:'Invalid email/password!',duration:4000, position: "tl"});
     }
   };
 
@@ -76,6 +77,7 @@ export class LoginComponent {
     this.authenticationService.login(data).subscribe(x => {
       this.authenticationService.storeToken(x.token);
       NavigationBarComponent.isAuthorized = true;
+      this.toast.success({detail:"SUCCESS",summary:'Welcome back!',duration:4000, position: "tl"});
       this.router.navigate(['home'])
     }, err => {
       alert("Incorrect email or password.")

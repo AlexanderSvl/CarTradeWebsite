@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/AuthenticationService';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class NavigationBarComponent implements OnInit {
   public static isAuthorized = false;
 
-  constructor(private authenticationService: AuthenticationService, private router: Router){}
+  constructor(private authenticationService: AuthenticationService, private router: Router, private toast: NgToastService){}
 
   ngOnInit(): void {
     NavigationBarComponent.isAuthorized = this.authenticationService.isLoggedIn();
@@ -21,6 +22,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   logout() {
+    this.toast.warning({detail:"WARNING",summary:'Successfully logged out!',duration:4000, position: "tl"});
     this.authenticationService.logout();
     this.ngOnInit();
     this.router.navigate([''])

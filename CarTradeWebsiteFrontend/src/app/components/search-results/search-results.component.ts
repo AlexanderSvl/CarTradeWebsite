@@ -7,6 +7,8 @@ import { CarResponseModel } from 'src/app/models/carResponseModel';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit{
+  itemsPerPage: number = 5;
+  page: number = 1;
   cars: CarResponseModel[] = [];
 
   ngOnInit(): void {

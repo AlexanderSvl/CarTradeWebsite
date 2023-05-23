@@ -5,6 +5,7 @@ import { OptionModel } from 'src/app/models/optionModel';
 import { CarPostService } from 'src/app/services/CarPostService';
 import { Router } from '@angular/router';
 import { Validation } from 'src/app/constants/validations';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-add-listing',
@@ -17,7 +18,7 @@ export class AddListingComponent{
   options: OptionModel[] = [];
   car = new CarModel("", this.images, "", "", "", "", "", null, null, "", "", "", "", "", null, this.options, new Date);
 
-  constructor(private postService: CarPostService, private router: Router){}
+  constructor(private postService: CarPostService, private router: Router, private toast: NgToastService){}
 
   onSubmit(){
     this.addImagesAndOptions();
@@ -28,7 +29,7 @@ export class AddListingComponent{
       this.createPost();
     }
     else {
-      alert("Invalid form! Check your infomation.")
+      this.toast.error({detail:"ERROR",summary:'Listing information is not valid!',duration:4000,  position:"tl"});
     }
   }
 
@@ -55,10 +56,10 @@ export class AddListingComponent{
 
     const jsonRequest = JSON.stringify(data);
     this.postService.createPost(jsonRequest).subscribe(x => {
-      alert("Success!")
+      this.toast.success({detail:"SUCCESS",summary:'Listing added!',duration:4000, position: "tl"});
       this.router.navigate(['home'])
     }, err => {
-      alert("Incorrect email or password.")
+      console.log(err);
     }); 
   }
 

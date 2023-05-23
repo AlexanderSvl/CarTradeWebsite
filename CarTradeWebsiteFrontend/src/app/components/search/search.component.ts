@@ -5,6 +5,7 @@ import { CarResponseModel } from 'src/app/models/carResponseModel';
 import { CarModel } from 'src/app/models/carModel';
 import { SearchModel } from 'src/app/models/searchModel';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-search',
@@ -16,7 +17,7 @@ export class SearchComponent {
   searchParameters = new SearchModel(null, null, null, null, "", "", null, null, null, null, null, null, null, null, null,  null, null);
   options: string = "";
 
-  constructor(private http: HttpClient, public searchService: SearchService, private router: Router) { }
+  constructor(private http: HttpClient, public searchService: SearchService, private router: Router, private toast: NgToastService) { }
 
   onSubmit(){
     this.searchParameters.options = this.options.split(", "). join(",").split(",");
@@ -30,7 +31,7 @@ export class SearchComponent {
     }, error => {
       this.cars = [];
       localStorage.removeItem("cars");
-      alert("No cars match your requirements!")
+      this.toast.warning({detail:"WARNING",summary:'No cars match your requirements!',duration:4000, position: "tl"});
     });
   }
 
